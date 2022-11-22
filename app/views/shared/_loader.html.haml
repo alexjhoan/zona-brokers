@@ -1,0 +1,6 @@
+- transparent = false if local_assigns[:transparent].nil?
+.loader{ class: [('hidden' if hidden), ('fullscreen' if fullscreen), ('transparent' if transparent)]  }
+  .spinner
+    .bounce1
+    .bounce2
+    .bounce3

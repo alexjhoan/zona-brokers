@@ -1,0 +1,161 @@
+// Properties show
+$( document ).on('ready', function() {
+  // We show sidebar on screens bigger than 479px
+  var showing_sidebar = $('.side-section .sidebar').css('display') == 'block'
+  var showing_consult_modal = false;
+
+  $('.agency button.enable-phones').on('click', function(){
+    $('.agency .phone').removeClass('hidden');
+    $(this).addClass('hidden');
+  });
+
+  $('.consult-form .phone').on('click', function() {
+    $('.consult-form .phone a').show();
+    $('.consult-form .phone .getphone').hide();
+  });
+
+  $('.consult-button').on('click', function() {
+    if (!showing_sidebar) {
+      $('.consult-modal').removeClass('hidden');
+      $('.consult-button-footer').css('display', 'none');
+      $('footer').css('margin-bottom', '');
+      disableScroll();
+      showing_consult_modal = true;
+    } else {
+      $('html, body').animate({
+        scrollTop: $('.consult-form').offset().top
+      }, 500);
+      $('.consult-form').find("input[name='name']").focus();
+    }
+  });
+
+  if (!showing_sidebar && !showing_consult_modal) {
+    $(window).on('scroll', function() {
+      var scroll_height = $(document).height() - ($(window).height() + $('body').scrollTop())
+
+      if (scroll_height > $('.main-footer').height()) {
+        $('.consult-button-footer').css('display', 'block');
+      } else {
+        $('.consult-button-footer').css('display', 'none');
+      }
+    });
+  }
+
+  $('.property-details .buttons-container.button-toggles button').on('click', function() {
+    $('.property-details .buttons-container.button-toggles button').removeClass('hidden');
+
+    if ($(this).hasClass('show-location')){
+      createMapWithPropertyLocation();
+      $('.button-toggles .show-location').addClass('hidden');
+      $('#property-map').removeClass('hidden');
+      $('.prod-image-carousel, .prod-thumbs-carousel, #property-panoramic').addClass('hidden');
+    } else if ($(this).hasClass('show-3d')) {
+      createMapWithPropertyLocation();
+      $('.button-toggles .show-3d').addClass('hidden');
+      $('#property-panoramic').removeClass('hidden');
+      $('.prod-image-carousel, .prod-thumbs-carousel, #property-map').addClass('hidden');
+    } else if ($(this).hasClass('show-images')) {
+      $('.button-toggles .show-images').addClass('hidden');
+      $('.prod-image-carousel, .prod-thumbs-carousel').removeClass('hidden');
+      $('#property-map, #property-panoramic').addClass('hidden');
+    }
+  })
+
+  $('.property-details .consult-express').on('click', function(){
+    var query_name = $(this).attr('data-consult-value');
+    var name = localStorage.getItem('name');
+    var email = localStorage.getItem('email');
+    var phone = localStorage.getItem('phone');
+    var listing_type = $(".property-details .consult-express-modal input[name='listing_type']").val();
+    var rent = $(".property-details .consult-express-modal input[name='rent']").val();
+    var id = $('section.property-details').attr('data-id');
+    $(".consult-express-modal input[name='query_name']").val($(this).attr('data-consult-value'));
+
+    if(name && email) {
+      $.post('/properties/' + id + '/consult_express.js', {
+        name: name,
+        email: email,
+        phone: phone,
+        listing_type: listing_type,
+        rent: rent,
+        query_name: query_name
+      })
+      $(this).html('Pregunta enviada');
+      $(this).removeClass('consult-express');
+    } else {
+      $('.consult-express-modal').removeClass('hidden');
+      $('body').css('overflow-y', 'hidden');
+      if (is_mobile) {
+        $('body').css('position', 'fixed');
+      }
+    }
+  })
+
+  $('.consult-express-modal form').on('submit', function(){
+    $('.consult-express-modal').addClass('hidden');
+    enableScroll();
+    store_user_information('.consult-express-modal');
+  });
+
+  $('.consult-form form').on('submit', function(){
+    if (showing_consult_modal) {
+      showing_consult_modal = false;
+      if ($(document).height() - ($(window).height() + $('body').scrollTop()) > $('.main-footer').height()){
+        $('.consult-button-footer').css('display', 'block');
+      }
+    };
+    store_user_information('.consult-form');
+  });
+
+  function store_user_information(modal) {
+    localStorage.setItem('name', $(modal + " input[name='name']").val());
+    localStorage.setItem('email', $(modal + " input[name='email']").val());
+    localStorage.setItem('phone', $(modal + " input[name='phone']").val());
+  }
+
+  function createMapWithPropertyLocation() {
+    if (typeof map !== 'undefined') {
+      return;
+    }
+
+    var position = {
+      lat: parseFloat($('#property-map').attr('data-latitude')),
+      lng: parseFloat($('#property-map').attr('data-longitude'))
+    };
+    map = new google.maps.Map(document.getElementById('property-map'), {
+      center: position,
+      zoom: 14
+    });
+
+    var panorama = new google.maps.StreetViewPanorama(
+      document.getElementById('property-panoramic'), {
+        position: position,
+        pov: {
+          heading: 34,
+          pitch: 10
+        }
+      }
+    );
+    map.setStreetView(panorama);
+
+    if ($('#property-map').attr('data-pointType') == 0) {
+      // Exact Pointer
+      var marker = new google.maps.Marker({
+        position: position,
+        map: map
+      });
+    } else {
+      // Non exact pointer
+      var circle = new google.maps.Circle({
+        strokeColor: "<%= SITE_CONFIG['secondary_color'] %>",
+        strokeOpacity: 0.8,
+        strokeWeight: 1,
+        fillColor: "<%= SITE_CONFIG['secondary_color'] %>",
+        fillOpacity: 0.35,
+        map: map,
+        center: position,
+        radius: 175
+      });
+    }
+  }
+});

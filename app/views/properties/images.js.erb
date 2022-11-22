@@ -1,0 +1,7 @@
+var property = $(".property-box[data-id=<%=params[:id]%>]");
+var carousel = property.find('.images-carousel')
+<% @images[0, 12].each do |image| %>
+  carousel.append("<img alt='' src='" + "<%= image['th'] %>" + "'></img>");
+<% end %>
+
+createPropertyCarousel(property, carousel);

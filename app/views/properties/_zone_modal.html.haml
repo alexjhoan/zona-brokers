@@ -1,0 +1,45 @@
+.modal.zones-modal.hidden
+  .modal-background
+  .modal-box
+    .close-modal
+      %i.icon-cancel
+    .search-container
+      %h3
+        - if @params[:state_id].present?
+          Elegí los barrios donde quieres buscar
+        - else
+          Elegí el departamento donde buscar
+      .search-input
+        = text_field_tag 'zone_checkbox_filter', nil, placeholder: 'Buscar...', class: 'zone-checkbox-filter'
+        .icon-search
+    .options-container
+      - if @params[:state_id].present?
+        - @grouped_zones.keys.sort.each do |letter|
+          - zones = @grouped_zones[letter]
+          .zones-by-letter{ 'data-filter': letter }
+            .letter
+              = letter
+            - zones.each do |zone|
+              .zone.col-md-3.col-sm-4.col-xs-12{ 'data-filter': zone[:name] }
+                = check_box_tag "#{zone[:id]}", true, ( @params[:zone_id].present? && @params[:zone_id].include?(zone[:id])) || false, { class: "checkbox" }
+                .name
+                  .prevent-text-select
+                    = zone[:name]
+      - else
+        - @grouped_states.keys.sort.each do |letter|
+          - states = @grouped_states[letter]
+          .zones-by-letter{ 'data-filter': letter }
+            .letter
+              = letter
+            - states.each do |state|
+              .zone.col-md-3.col-sm-4.col-xs-12{ 'data-filter': state[:name] }
+                = check_box_tag "#{state[:id]}", true, false, { class: "checkbox" }
+                .name
+                  .prevent-text-select
+                    = state[:name]
+    .gradient-background
+    .modal-footer
+      .deselect
+        Deseleccionar todos
+      %button.primary.big.submit{ class: "style-#{SITE_CONFIG['buttons_style']}" }
+        Aplicar

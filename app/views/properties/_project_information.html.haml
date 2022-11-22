@@ -1,0 +1,55 @@
+%section.properties
+  %table
+    %tr
+      %th Dormitorios
+      %th Baños
+      %th M2
+      %th Piso
+      %th Precio
+      %th Ver unidad
+    -@property['unidades'].each do |unit|
+      %tr
+        %td
+          = unit['dormitorios_small']
+        %td
+          = unit['banios']
+        %td
+          = unit['m2'] + " m²"
+        %td
+          = unit['piso']
+        %td
+          - case unit['IDoperaciones']
+          - when '1'
+            = 'Venta: ' + unit['monedav'] + ' ' + unit['preciov']
+          - when '2'
+            = 'Alquiler: ' + unit['monedaa'] + ' ' + unit['precioa']
+          - else
+            = 'Consultar'
+        %td
+          = link_to (fa_icon 'eye'), property_seo_url(unit, 0)
+  .mobile-table
+    -@property['unidades'].each do |unit|
+      .unit-box
+        .unit-info
+          .name Dormitorios
+          .value
+            = unit['precioa']
+        .unit-info
+          .name M2
+          .value
+            = unit['m2'] + ' m²'
+        .unit-info
+          .name Precio
+          .value
+            - case unit['IDoperaciones']
+            - when '1'
+              = 'Venta: ' + unit['monedav'] + ' ' + unit['preciov']
+            - when '2'
+              = 'Alquiler: ' + unit['monedaa'] + ' ' + unit['precioa']
+            - else
+              = 'Consultar'
+        .show-unit
+          Ver unidad
+          = link_to (fa_icon 'eye'), property_seo_url(unit, 0)
+  %button.consult-button.primary.big{ class: "style-#{SITE_CONFIG['buttons_style']}" }
+    Consultar por este proyecto

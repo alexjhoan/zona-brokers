@@ -1,0 +1,59 @@
+- if SITE_CONFIG['set_og_tags']
+  - og_image = ''
+  - og_image = @properties.first['img'] if @properties.first.present?
+  - set_meta_tags og: { title: @search_info['h1'], url: properties_seo_url(@params), image: og_image }
+
+.page-content
+  .filters-header
+    %button.secondary.show-sidebar{ class: "style-#{SITE_CONFIG['buttons_style']}" }
+      Búsqueda Avanzada
+    = select_tag "list-order-mobile", options_for_select(filters_order.map { |obj| [obj[:name], obj[:id]] }, @params[:list_order] || 2), multiple: false, class: 'multiple'
+
+  %section.properties-search-section
+    .side-section
+      .sidebar-container
+        = render partial: 'sidebar'
+        .sidebar-toggler
+          = fa_icon "arrows-h"
+      - if SITE_CONFIG['display_ads_banners']
+        = render partial: 'side_banners'
+    .listings-container
+      .listings-header
+        - if SITE_CONFIG['display_ads_banners']
+          .banner-container
+            .banner.rectangular-short#div-gpt-ad-1503513918839-0
+        .info-container
+          = breadcrumbs(@params)
+
+          %h1
+            = title @search_info['h1']
+          .sub-title
+            - total = if @pagination['total'].to_i > 1000
+              - "más de 1.000"
+            - else
+              - @pagination['total']
+            = "Mostrando #{results_shown(@current_page, @pagination['rpp'], @pagination['total'])} de #{total} resultados"
+
+        = select_tag "list-order", options_for_select(filters_order.map { |obj| [obj[:name], obj[:id]] }, @params[:list_order] || 2), multiple: false, class: 'multiple'
+      .listings-box
+        %hr
+        .row.clearfix
+          / Default Property Box
+          - @properties[0..5].each do |property|
+            = render partial: 'properties/property_style_' + SITE_CONFIG['property_box_style'], locals: { property: property }
+
+          - if SITE_CONFIG['display_ads_banners']
+            .banner-container
+              .banner.rectangular-short#div-gpt-ad-1503513918839-1
+
+          - @properties.drop(6).each do |property|
+            = render partial: 'properties/property_style_' + SITE_CONFIG['property_box_style'], locals: { property: property }
+
+    %hr
+
+    = pagination(@current_page, @pagination['max_page'], @params)
+
+- if SITE_CONFIG['display_links_box'] && @show_links
+  = render :partial => 'shared/links-box', :locals => { links: @link_params }
+
+= render :partial => 'zone_modal'

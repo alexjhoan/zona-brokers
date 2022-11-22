@@ -1,0 +1,16 @@
+%section.property-listing{ class: "style-#{SITE_CONFIG['home_titles_style']}" }
+  %h2.sec-title.centered
+    Propiedades destacadas
+  .auto-container
+    / Filter
+    .filters.property-listing-tabs
+      %ul.filter-tabs.filter-btns.clearfix
+        %li.filter{ "data-value": 1, class: ('active' if  selected == '1')}
+          VENTA
+        %li.filter{ "data-value": 2, class: ('active' if  selected == '2')}
+          ALQUILER
+    .filter-list.row.clearfix
+      / Default Property Box
+      = render partial: "shared/loader", locals: { fullscreen: false, hidden: true }
+      - @properties.each do |property|
+        = render partial: 'properties/property_style_' + SITE_CONFIG['property_box_style'], locals: { property: property }

@@ -1,0 +1,19 @@
+.similar-properties.hidden-xs
+  %h3 PROPIEDADES SIMILARES
+  - @similar_properties[0..3].each do |property|
+    = link_to property_seo_url(property, property['tipoListing']), class: 'property-box', 'data-id': property['id'], target: '_blank' do
+      %figure
+        = image_tag property['img'], alt: ''
+      %span.property-info
+        %h4.truncated
+          = property['titulo'].html_safe
+        .details.truncated
+          = ((property['dormitoriosTXT'] != 'Monoambiente' ? "#{property['dormitorios']} " : "") + "#{property['dormitoriosTXT']} &nbsp|&nbsp #{property['banios']} #{property['baniosTXT']} &nbsp|&nbsp #{property['m2']} m²").html_safe
+        .price
+          = property['precio']
+
+.similar-properties-mobile.visible-xs
+  .medium-title
+    %h3 Propiedades similares
+  - @similar_properties[0..3].each do |property|
+    = render partial: 'properties/property_style_' + SITE_CONFIG['property_box_style'], locals: { property: property }

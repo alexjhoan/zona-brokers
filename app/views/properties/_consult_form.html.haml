@@ -1,0 +1,32 @@
+.consult-form{ class: "style-#{SITE_CONFIG['property_details_style']}" }
+  .consult-messages
+    - flash.each do |key, value|
+      .alert{ class: key }
+        = value
+  %h3
+    CONSULTÁ POR ESTA PROPIEDAD
+  - if SITE_CONFIG['display_agency_section']
+    .agency-info
+      .owner Anunciante:
+      .content-container
+        - if @property['inmobiliaria']['logo'].present?
+          .logo-container
+            %img{ alt: '', src: @property['inmobiliaria']['logo'], class: 'logo' }/
+        .content
+          = @property['inmobiliaria']['nombre']
+
+  = form_tag consult_property_path(@property['id']), method: 'post', remote: true do
+    %input{ name: 'name', placeholder: 'Nombre*', required: true, type: 'text', value: '' }
+    %input{ name: 'email', placeholder: 'Email*', required: true, type: 'email', value: '' }
+    %input{ name: 'phone', placeholder: 'Teléfono', required: false }
+    %textarea{ name: 'question', placeholder: 'Consulta*', required: true }
+    %input{ name: 'listing_type', value: @listing_type, class: 'hidden' }
+    %input{ name: 'rent', value: @property['temporario'], class: 'hidden'}
+    %button.primary.big{ class: "style-#{SITE_CONFIG['buttons_style']}", type: 'submit' } ¡Enviar Consulta!
+  - if @property['inmobiliaria']['telefono'].present?
+    .phone
+      = fa_icon 'phone'
+      %a{ href: 'tel:' + @property['inmobiliaria']['telefono'] }
+        = @property['inmobiliaria']['telefono']
+      .getphone
+        Ver teléfono

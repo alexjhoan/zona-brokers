@@ -1,0 +1,22 @@
+- if links.present?
+  %section.links_box
+    .auto-container
+      %h2.sec-title.centered
+        = links[:title]
+      .row
+        - links[:sections].each do |section|
+          - if section[:links].present?
+            .col-lg-4.col-md-4.col-sm-6.col-xs-12
+              %h3
+                = section[:title]
+              - section[:links].each do |link|
+                = link_to ('(' + link['cantResults'].to_s + ') ' + link['texto']), "/#{link['href']}"
+
+      %ul.links-carousel.owl-carousel.owl-theme
+        - links[:sections].each do |section|
+          - if section[:links].present?
+            %li
+              %h3
+                = section[:title]
+              - section[:links].each do |link|
+                = link_to ('(' + link['cantResults'].to_s + ') ' + link['texto']), "/#{link['href']}"

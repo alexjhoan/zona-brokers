@@ -1,0 +1,167 @@
+%section.sidebar
+  .with-border
+    .sidebar-header
+      %h4
+        BÚSQUEDA AVANZADA
+      .powered-by
+        .text
+          Powered by
+        = image_tag 'infocasas.png', alt: ''
+
+    .tags-container
+      - irrelevant_keys = ['operation_type_name', 'page', 'currency_id', 'from_date', 'to_date', 'min_price', 'max_price', 'list_order', 'real_estate_id']
+      - diplayable_params = @params.except(*irrelevant_keys)
+
+      - diplayable_params.each do |key, value|
+        - if value.kind_of?(Array)
+          - value.each do |filter|
+            - link_params = @params.deep_dup
+            - link_params[key].delete(filter)
+            = link_to properties_path(link_params), class: 'tag' do
+              = filter_name(key, filter)
+              %i.icon-cancel
+
+        - elsif value.present?
+          - link_params = @params.deep_dup
+          - link_params.delete(key)
+          = link_to properties_path(link_params), class: 'tag' do
+            = filter_name(key, value)
+            %i.icon-cancel
+
+    .filter-container
+      %h4
+        Tipo operación
+      - search_operation_types.each do |operation_type|
+        - if @params[:operation_type_name] == name_to_param(operation_type[:name])
+          .filter.selected
+            = "#{operation_type[:name]}"
+        - else
+          = link_to operation_type[:name], "#{name_to_param(operation_type[:name])}?#{request.query_string}", class: 'filter'
+
+    .filter-container
+      - if @params[:state_id].present?
+        %h4
+          Barrios más demandados
+        -@ubications.each do |ubication|
+          - link_params = @params.deep_dup
+          - if link_params[:zone_id].present?
+            - link_params[:zone_id] << ubication['id'] if link_params[:zone_id].exclude? ubication['id'].to_s
+          - else
+            - link_params[:zone_id] = [ubication['id']]
+          = link_to ubication['nombre'], properties_path(link_params), class: 'filter'
+        .filter.search
+          Buscar otros barrios
+          %i.icon-search
+      - else
+        %h4
+          Ubicación
+        - @ubications.each do |ubication|
+          - link_params = @params.deep_dup
+          - link_params[:state_id] = ubication['id']
+          = link_to ubication['nombre'], properties_path(link_params), class: 'filter'
+        .filter.search
+          Buscar otros departamentos
+          %i.icon-search
+
+    .filter-container
+      %h4
+        Tipo de propiedad
+      - property_types.each do |type|
+        - if !@params['property_type_id'].present? || !(@params['property_type_id'].include? type[:id])
+          - link_params = @params.deep_dup
+          - if link_params[:property_type_id].present?
+            - link_params[:property_type_id] << type[:id] if link_params[:property_type_id].exclude? type[:id].to_s
+          - else
+            - link_params[:property_type_id] = [type[:id]]
+          = link_to type[:name], properties_path(link_params), class: 'filter'
+
+    -if @operation_type_param.present? && @operation_type_param[:id] == '4'
+      .filter-container
+        %h4
+          Fecha
+        .date-filter
+          %input.datepicker{ placeholder: 'Llegada', id: 'from_date_input' }
+          %input.datepicker{ placeholder: 'Salida', id: 'to_date_input' }
+          %button.primary{ class: "style-#{SITE_CONFIG['buttons_style']}" }
+            = link_to request.original_url do
+              %i.icon-check
+
+    .filter-container
+      %h4
+        Precio
+      .currency-filter
+        %button.primary{ class: "style-#{SITE_CONFIG['buttons_style']}", 'data-value': 2, class: (@params[:currency_id] != '2') ? 'empty' : '' }
+          $
+        %button.primary{ class: "style-#{SITE_CONFIG['buttons_style']}", 'data-value': 1, class: (@params[:currency_id].present? && @params[:currency_id] != '1') ? 'empty' : '' }
+          U$S
+      .price-filter
+        = text_field_tag('min_price', @params[:min_price], placeholder: 'Desde', id: 'min_price_input')
+        = text_field_tag('max_price', @params[:max_price], placeholder: 'Hasta', id: 'max_price_input')
+        = link_to request.original_url do
+          %button.primary{ class: "style-#{SITE_CONFIG['buttons_style']}" }
+            %i.icon-check
+
+    .filter-container
+      %h4
+        Dormitorios
+      - rooms.each do |rooms_option|
+        - if !@params['rooms_id'].present? || !(@params['rooms_id'].include? rooms_option[:id])
+          - link_params = @params.deep_dup
+          - if link_params[:rooms_id].present?
+            - link_params[:rooms_id] << rooms_option[:id] if link_params[:rooms_id].exclude? rooms_option[:id].to_s
+          - else
+            - link_params[:rooms_id] = [rooms_option[:id]]
+          = link_to rooms_option[:name], properties_path(link_params), class: 'filter'
+
+    .filter-container
+      %h4
+        Baños
+      - bathrooms.each do |bathrooms_option|
+        - if !@params['bathrooms_id'].present? || !(@params['bathrooms_id'].include? bathrooms_option[:id])
+          - link_params = @params.deep_dup
+          - if link_params[:bathrooms_id].present?
+            - link_params[:bathrooms_id] << bathrooms_option[:id] if link_params[:bathrooms_id].exclude? bathrooms_option[:id].to_s
+          - else
+            - link_params[:bathrooms_id] = [bathrooms_option[:id]]
+          = link_to bathrooms_option[:name], properties_path(link_params), class: 'filter'
+
+    .filter-container
+      %h4
+        Estado
+      - statuses.each do |status_option|
+        - if !@params['status_id'].present? || !(@params['status_id'].include? status_option[:id])
+          - link_params = @params.deep_dup
+          - link_params[:status_id] = status_option[:id]
+          = link_to status_option[:name], properties_path(link_params), class: 'filter'
+
+    .filter-container
+      %h4
+        Disposición
+      - dispositions.each do |disposition_option|
+        - if !@params['disposition_id'].present? || !(@params['disposition_id'].include? disposition_option[:id])
+          - link_params = @params.deep_dup
+          - link_params[:disposition_id] = disposition_option[:id]
+          = link_to disposition_option[:name], properties_path(link_params), class: 'filter'
+
+    .filter-container
+      %h4
+        Distancia al mar
+      - sea_distances.each do |sea_distance|
+        - if !@params['sea_distance_id'].present? || !(@params['sea_distance_id'].include? sea_distance[:id])
+          - link_params = @params.deep_dup
+          - link_params[:sea_distance_id] = sea_distance[:id]
+          = link_to sea_distance[:name], properties_path(link_params), class: 'filter'
+
+    %hr
+
+    .filter-container
+      %h4
+        Características
+      - comodities.each do |comodity_option|
+        - if !@params['comodities_id'].present? || !(@params['comodities_id'].include? comodity_option[:id])
+          - link_params = @params.deep_dup
+          - if link_params[:comodities_id].present?
+            - link_params[:comodities_id] << comodity_option[:id] if link_params[:comodities_id].exclude? comodity_option[:id].to_s
+          - else
+            - link_params[:comodities_id] = [comodity_option[:id]]
+          = link_to comodity_option[:name], properties_path(link_params), class: 'filter'

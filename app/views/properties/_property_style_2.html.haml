@@ -1,0 +1,50 @@
+= link_to property_seo_url(property, property['tipoListing']), class: 'property-box col-lg-4 col-md-6 col-sm-6 col-xs-12 style-2', 'data-id': property['id'], target: '_blank' do
+  .inner-box
+    .image-box
+      - if property['tipoPropiedad'] == 'Terrenos' && property['financia'] != '0'
+        %label.financed-label
+          Ver financiación
+      %figure.image
+        = image_tag property['img'], alt: ''
+      .images-carousel.owl-theme.owl-carousel.hidden
+      = render partial: "shared/loader", locals: { fullscreen: false, hidden: true, transparent: true }
+    - if property['IDproyecto']
+      %h3.truncated
+        = property['titulo'].html_safe + " - Ver #{property['cantUnidades']} unidades"
+      .lower-content
+        .property-info
+          .location.truncated
+            %span.fa.fa-map-marker
+            = "#{property['zona']} &nbsp|&nbsp #{property['tipoPropiedad']}".html_safe
+          .details
+            = property['allDorms']
+        .property-price
+          %span.price-type
+            = "#{property['operacion'].capitalize} desde<br>".html_safe
+          = property['precio']
+        .button-container
+          %button.primary.big{ class: "style-#{SITE_CONFIG['buttons_style']}" }
+            >
+    - else
+      %h3.truncated
+        = property['titulo'].html_safe
+      .lower-content
+        .property-info
+          .location.truncated
+            %span.fa.fa-map-marker
+            = "#{property['zona']} &nbsp|&nbsp #{property['tipoPropiedad']}".html_safe
+          .details
+            - if property['tipoPropiedad'] != 'Terrenos'
+              = ((property['dormitoriosTXT'] != 'Monoambiente' ? "#{property['dormitorios']} " : "") + "#{property['dormitoriosTXT']} &nbsp|&nbsp #{property['banios']} #{property['baniosTXT']} &nbsp|&nbsp ").html_safe
+            = ("#{property['m2']} m²").html_safe
+
+            .details
+        - if property['tipoPropiedad'] == 'Terrenos' && property['financia'] != '0' && property['precio'] != ' Consultar'
+          .property-price.financed
+            = "#{property['precio']}"
+        - else
+          .property-price
+            = property['precio']
+        .button-container
+          %button.primary.big{ class: "style-#{SITE_CONFIG['buttons_style']}" }
+            >

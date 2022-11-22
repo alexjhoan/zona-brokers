@@ -1,0 +1,18 @@
+- if SITE_CONFIG['set_og_tags']
+  - set_meta_tags og: { title: 'Empresa', url: request.original_url, image: 'aboutPage/about-page.jpg' }
+- title 'Empresa'
+
+.page-content
+  %section.about-container.style-2
+    .image-container
+    .description
+      .foto
+        = image_tag 'aboutPage/federico_puppo.png', class: 'author-image', alt: ''
+        %h4
+          FEDERICO PUPPO
+        %p DIRECTOR 
+      .texto
+        %h3
+          SOBRE LA EMPRESA
+        %p Somos una empresa familiar iniciada por el Sr. Juan Carlos Puppo Stambuk.
+        %p Con mas de 50 años en el mercado inmobiliario y con el mismo espíritu emprendedor basado en la ética y el profesionalismo, en PUPPO GROSS existimos para procurarle a nuestros clientes soluciones personalizadas, eficaces y eficientes, ajustadas a sus necesidades individuales. 

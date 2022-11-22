@@ -1,0 +1,48 @@
+= link_to property_seo_url(property, property['tipoListing']), class: 'property-box col-lg-4 col-md-6 col-sm-6 col-xs-12 style-3', 'data-id': property['id'], target: '_blank' do
+  .inner-box
+    %h3.truncated
+      - if property['IDproyecto']
+        = property['titulo'].html_safe + " - Ver #{property['cantUnidades']} unidades"
+      - else
+        = property['titulo'].upcase.html_safe
+    .location.truncated
+      %span.fa.fa-map-marker
+      = "#{property['zona']} &nbsp|&nbsp #{property['tipoPropiedad']}".html_safe
+    .image-box
+      - if property['tipoPropiedad'] == 'Terrenos' && property['financia'] != '0'
+        %label.financed-label
+          Ver financiación
+      %figure.image
+        = image_tag property['img'], alt: ''
+      .images-carousel.owl-theme.owl-carousel.hidden
+      = render partial: "shared/loader", locals: { fullscreen: false, hidden: true, transparent: true }
+    .lower-content
+      .property-info
+        .property-price
+          .operation
+            = @operation_type_param[:name].upcase
+          - if property['tipoPropiedad'] == 'Terrenos' && property['financia'] != '0' && property['precio'] != ' Consultar'
+            .price.financed
+              = "#{property['precio']}"
+          - else
+            .price
+              = property['precio']
+        %button.primary.big{ class: "style-#{SITE_CONFIG['buttons_style']}" }
+          +INFO
+      .details
+        - if property['tipoPropiedad'] != 'Terrenos'
+          - if property['IDproyecto']
+            .item
+              = fa_icon "bed"
+              = property['allDorms']
+          - else
+            .item
+              = fa_icon "bed"
+              = property['dormitorios']
+            .item
+              %i.icon-bath
+              = property['banios']
+        .item
+          = fa_icon "arrows-alt"
+          = "#{property['m2']} m²"
+    .border-line

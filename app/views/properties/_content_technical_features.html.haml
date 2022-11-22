@@ -1,0 +1,12 @@
+/ Other Features
+%section.technical-features
+  .medium-title
+    %h3 Ficha Técnica
+  .row.clearfix
+    -@property['ficha_tecnica'].each do |data|
+      .col-md-6.col-sm-6.col-xs-12
+        .feature
+          .name
+            = data['key']
+          .value{ class: ('consult-express' if data['auto'].present?), 'data-consult-value': data['auto']}
+            = data['value']

@@ -1,0 +1,34 @@
+- if SITE_CONFIG['set_og_tags']
+  - set_meta_tags og: { title: SITE_CONFIG['site_title'], url: request.original_url, image: 'banners/Banner-Header-Home.jpg' }
+
+- title SITE_CONFIG['site_title']
+
+= render partial: 'banner'
+
+- if SITE_CONFIG['display_home_carousel']
+  .carousel-highlights-container
+    .images-carousel.owl-theme.owl-carousel
+      - @home_banners.each do |banner|
+        %a{ href: "#{banner['link']}", target: "#{banner['target']}" }
+          .text-overlay
+            = banner['title']
+          .image
+            = image_tag banner['file']
+
+- if SITE_CONFIG['display_ads_banners']
+  = render partial: 'highlights'
+
+= render partial: 'highlighted-properties', locals: { selected: '1' }
+
+- if SITE_CONFIG['display_ads_banners']
+  .banner-container
+    .banner.rectangular-long#div-gpt-ad-1503513918839-1
+
+- if SITE_CONFIG['display_home_image']
+  = image_tag 'city.jpg', alt: '', class: 'section-divider'
+
+- if SITE_CONFIG['display_links_box']
+  = render partial: 'shared/links-box', locals: { links: @link_params }
+
+- if SITE_CONFIG['display_newsletter']
+  = render partial: 'shared/newsletter'

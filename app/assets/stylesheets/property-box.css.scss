@@ -1,0 +1,367 @@
+.property-box {
+  position: relative;
+  margin-bottom: 40px;
+
+  .inner-box {
+    position: relative;
+    display: block;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    height: 380px;
+
+    &:hover{
+      border-bottom: solid 4px $primary-color;
+    }
+  }
+
+  .image-box {
+    position: relative;
+    height: 220px;
+
+    img{
+      position:relative;
+      display:block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .financed-label {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      z-index: 2;
+      padding: 4px 8px;
+      margin: 0;
+      border-radius: 3px;
+      border: 1px solid #fff;
+      color: #fff;
+      background-color: $primary-color;
+      font-weight: 600;
+      font-family: 'Poppins',sans-serif;
+      cursor: pointer;
+    }
+
+    .property-price {
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      font-weight: 600;
+      line-height: 24px;
+      padding: 6px 24px 5px;
+      text-align: center;
+      color: #ffffff;
+      font-size: 21px;
+      font-family: 'Poppins',sans-serif;
+      background: #333333;
+      z-index: 2;
+    }
+
+    .images-carousel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-height: 220px;
+
+      &.hidden img {
+        display: none;
+      }
+    }
+
+    .owl-dots {
+      position: absolute;
+      bottom: 0px;
+      height: 25px;
+      margin: 0;
+      max-width: 100%;
+      left: 5px;
+
+      .active span {
+        background: white;
+      }
+
+      span {
+        background: #4D4B45;
+        border: none;
+        height: 7px;
+        width: 7px;
+        margin: 0 2px;
+      }
+    }
+
+    .owl-nav {
+      .owl-prev {
+        color: white;
+      }
+
+      .owl-next {
+        color: white;
+      }
+    }
+  }
+
+  .lower-content {
+    padding: 12px;
+
+    .property-info {
+      position: relative;
+      line-height: 24px;
+      margin-bottom: 10px;
+
+      a {
+        color: black;
+      }
+
+      h3 {
+        font-size: 18px;
+        color: #242133;
+        line-height: 1.6em;
+        font-weight: 500;
+        margin-bottom: 3px;
+      }
+    }
+
+    button {
+      font-weight: normal;
+      font-size: 16px;
+    }
+  }
+}
+
+.property-box.style-2 {
+  .inner-box {
+    height: 410px;
+
+    &:hover{
+      border-bottom: solid 4px $secondary-color;
+    }
+  }
+  .image-box {
+    height: 240px;
+
+    img {
+      height: 240px;
+    }
+  }
+
+  h3 {
+    color: white;
+    background-color: $h3-background-color;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .lower-content {
+    height: 128px;
+
+    .property-info {
+      margin-bottom: 0px;
+
+      .location {
+        span {
+          display: none;
+        }
+      }
+    }
+
+    .price-type {
+      color: $secondary-color;
+      font-size: 14px;
+    }
+
+    .property-price {
+      color: #444444;
+      font-size: 26px;
+      float: left;
+
+      &.financed {
+        font-size: 22px;
+        margin-top: 29px;
+      }
+    }
+
+    button {
+      float: right;
+      padding: 3px 13px;
+      margin-top: 25px;
+      font-size: 30px;
+    }
+  }
+}
+
+.property-box.style-3 {
+  .inner-box {
+    border: none;
+
+    h3 {
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    .location .fa {
+      color: $primary-color;
+    }
+
+    .lower-content {
+      padding: 5px 0px;
+      float: left;
+
+      .property-info {
+        background-color: $secondary-color;
+        border-radius: 8px;
+        padding: 10px;
+        height: 60px;
+        margin-bottom: 15px;
+
+        .property-price {
+          float: left;
+          line-height: 20px;
+
+          .operation {
+            color: $primary-color;
+            font-weight: 500;
+            margin-left: 5px;
+          }
+
+          .price {
+            color: white;
+            font-size: 21px;
+            font-weight: 500;
+            margin-left: 5px;
+
+            &.financed {
+              font-size: 18px;
+            }
+          }
+        }
+
+        button {
+          float: right;
+          padding: 8px 15px;
+          font-size: 18px;
+          font-weight: 500;
+        }
+      }
+
+      .details {
+        font-size: 20px;
+        padding-left: 20px;
+        float: left;
+
+        .item {
+          margin-right: 50px;
+          float: left;
+
+          i {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+
+    .border-line {
+      width: 100%;
+      border-bottom: 2px solid lightgray;
+      float: left;
+    }
+  }
+}
+
+.property-box.style-4 {
+  margin-bottom: 50px;
+
+  .box-header {
+    height: 30px;
+    line-height: 40px;
+
+    .location {
+      font-size: 20px;
+      font-weight: 500;
+      float: left;
+      height: 30px;
+      overflow: visible;
+
+      .fa {
+        color: $primary-color;
+        float: left;
+        font-size: 30px;
+        margin-right: 10px;
+      }
+
+      .text {
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  h3 {
+    padding: 5px;
+    color: $primary-color;
+    font-size: 18px;
+  }
+
+  .inner-box {
+    height: 312px;
+
+    .details {
+      height: 50px;
+      padding: 10px;
+
+      .item {
+        padding-left: 0px;
+        line-height: 30px;
+
+        .round-icon {
+          width: 30px;
+          height: 30px;
+          line-height: 35px;
+          text-align: center;
+          border-radius: 50%;
+          background-color: $primary-color;
+          float: left;
+          margin-right: 10px;
+
+
+          i {
+            color: white;
+            display: inline-block;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    .property-info {
+      background-color: $primary-color;
+      height: 40px;
+
+      .property-price {
+        color: white;
+        float: left;
+        font-weight: 600;
+        font-size: 24px;
+        margin: 8px 20px;
+      }
+
+      button {
+        float: right;
+        padding: 5px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .property-box.style-2.col-lg-4 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1050px) {
+  .property-box.style-2.col-sm-6 {
+    width: 100%;
+  }
+}

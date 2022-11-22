@@ -1,0 +1,25 @@
+- if SITE_CONFIG['set_og_tags']
+  - set_meta_tags og: { title: 'Contactanos', url: request.original_url, image: 'logo.png' }
+
+.page-content
+  - title 'Contactanos'
+
+  %section.contact-section
+    .map-container
+      %h2
+        Nuestras Sucursales
+      #contact-map
+
+    .contact-container
+      %h1 CONTACTANOS
+      = form_tag contact_index_path, method: 'post', remote: true do
+        .contact-form
+          .form-group.col-md-4.col-sm-4.col-xs-12
+            %input{ name: 'name', placeholder: 'Nombre*', required: true, type: 'text', value: '' }
+          .form-group.col-md-4.col-sm-4.col-xs-12
+            %input{ name: 'email', placeholder: 'Email*', required: true, type: 'email', value: '' }
+          .form-group.col-md-4.col-sm-4.col-xs-12
+            %input{ name: 'phone', placeholder: 'Teléfono', required: false }
+          .form-group.col-md-12.col-sm-12.col-xs-12
+            %textarea{ name: 'question', placeholder: 'Consulta*', required: true }
+          %button.primary.big{ class: "style-#{SITE_CONFIG['buttons_style']}", type: 'submit', id: 'submit-button' } ¡Enviar Consulta!

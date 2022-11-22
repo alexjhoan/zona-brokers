@@ -1,0 +1,10 @@
+.modal.consult-modal.hidden
+  .modal-background
+  .modal-box
+    .close-modal
+      %i.icon-cancel
+    = render partial: 'consult_form'
+
+.consult-button-footer
+  %button.consult-button.primary.big{ class: "style-#{SITE_CONFIG['buttons_style']}" }
+    Consultar

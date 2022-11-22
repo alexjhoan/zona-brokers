@@ -1,0 +1,28 @@
+.post-box.news-style-one.col-lg-4.col-md-6.col-sm-6.col-xs-12
+  .inner-box
+    %figure.image-box
+      = link_to post_path(id: post['id']), target: '_blank' do
+        - if post['images'].present?
+          = image_tag post['images'].first['url'], alt: ''
+        - else
+          = image_tag 'newsletter.jpg', alt: ''
+    .lower-content
+      .post-meta
+        %ul
+          %li
+            = l(post['updated'].to_date, format: "%d %B, %Y").titleize
+            por
+            = post['author']['displayName']
+      %h3.truncated
+        = link_to post_path(id: post['id']), target: '_blank' do
+          = post['title']
+      .text.truncated-3
+        - post['content'].gsub!(/[\n]+/,' ')
+        - post['content'].gsub!(/(<div.*?>)+/,'')
+        - post['content'].gsub!(/(<\/div>)+/,'')
+        - post['content'].gsub!(/(<(a|b|li|ul).*?>)+/,'')
+        - post['content'].gsub!(/(<\/(a|b|li|ul)>)+/,'')
+        - post['content'].gsub!(/(&nbsp;)+/,' ')
+        - post['content'].gsub!(/<span.*?>+/,'')
+        - post['content'].gsub!(/<\/span>+/,'')
+        = post['content'].html_safe

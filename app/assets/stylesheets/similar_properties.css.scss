@@ -1,0 +1,55 @@
+.similar-properties {
+  display: inline-block;
+  width: 100%;
+  margin-top: 50px;
+
+  h3 {
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+
+  .property-box {
+    display: block;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    height: 105px;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $light-border-color;
+    }
+
+    img {
+      float: left;
+      padding-right: 10px;
+      width: 100px;
+      height: 80px;
+    }
+
+    .property-info {
+      height: 100%;
+
+      h4 {
+        font-size: 15px;
+      }
+
+      .details {
+        font-size: 14px;
+        color: $quaternary-color;
+      }
+
+      .price {
+        font-size: 18px;
+        font-weight: 600;
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.similar-properties-mobile.visible-xs  {
+  margin-top: 50px;
+
+  .medium-title {
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,92 @@
+.form-group .ui-selectmenu-button.ui-button{
+  width: 100%;
+  background: none;
+  font-size: 14px;
+  font-style: normal;
+  height: 48px;
+  padding: 11px 20px;
+  border: 1px solid #e0e0e0;
+  font-family: 'Open Sans',sans-serif;
+  line-height: 24px;
+  color: #333333;
+  border-radius: 3px;
+}
+
+.banner-form-box .form-group .ui-selectmenu-button.ui-button{
+  background: #ffffff;
+}
+
+.add-listing-form .ui-selectmenu-button.ui-button{
+  margin-bottom: 15px;
+}
+
+.form-group .ui-button .ui-icon{
+  background: none;
+  position: relative;
+  top: 3px;
+  left: 2px;
+  text-indent: 0px;
+  color: #333333;
+}
+
+.form-group .ui-button .ui-icon:before{
+  font-family: 'FontAwesome';
+  content: "\f107";
+  position: absolute;
+  right: 0px;
+  top: 0px !important;
+  top: 5px;
+  width: 10px;
+  height: 20px;
+  display: block;
+  color: #121212;
+  line-height: 20px;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  z-index: 5;
+}
+
+.ui-selectmenu-menu{
+  z-index: 999;
+}
+
+.ui-widget.ui-widget-content{
+  border: 1px solid #e0e0e0;
+  font-family: 'Poppins',sans-serif;
+}
+
+.ui-menu .ui-menu-item{
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ui-menu .ui-menu-item:last-child{
+  border: none;
+}
+
+.ui-menu .ui-menu-item-wrapper{
+  position: relative;
+  display: block;
+  padding: 10px 20px ;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width: 479px) {
+  .form-group .ui-selectmenu-button.ui-button{
+    height: 41px;
+    padding: 8px 20px;
+  }
+}
+
+.ui-datepicker-calendar {
+  .ui-state-active {
+    background: $primary-color;
+    border: $primary-color-hover;
+  }
+}
+
+form.container {
+  width: 100%;
+}

@@ -1,0 +1,12 @@
+- if SITE_CONFIG['set_og_tags']
+  - og_image = ''
+  - og_image = @property['imagenes'].first['img'] if @property['imagenes'].first.present?
+  - set_meta_tags og: { title: @property['titulo'], url: request.original_url, image: og_image }
+
+= render partial: 'property_details_' + SITE_CONFIG['property_details_style']
+
+- if SITE_CONFIG['display_links_box'] && @listing_type != '2' # Not a project
+  = render partial: 'shared/links-box', locals: { links: @link_params }
+
+= render partial: 'consult_modal'
+= render partial: 'consult_express_modal'

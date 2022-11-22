@@ -1,0 +1,52 @@
+!!!
+%html
+  %head
+    %meta{ content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0', name: 'viewport' }
+    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type' }
+
+    %link{ href: @canonical_url || request.original_url, rel: 'canonical' }
+
+    = csrf_meta_tags
+    = display_meta_tags
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+
+    %script{ src: "//maps.google.com/maps/api/js?key=#{ENV['google_api_key']}" }
+    %script{ async: 'async', src: 'https://www.googletagservices.com/tag/js/gpt.js' }
+
+    - if controller_name == 'welcome' && action_name == 'index'
+      = javascript_include_tag 'home'
+      %meta{ content: 'frontpage', name: 'cXenseParse:pageclass' }/
+    - if controller_name == 'properties' && action_name == 'index'
+      = javascript_include_tag 'list'
+      %meta{ content: 'frontpage', name: 'cXenseParse:pageclass' }/
+    - if controller_name == 'properties' && action_name == 'show'
+      = javascript_include_tag 'show'
+      %meta{ content: 'article', name: 'cXenseParse:pageclass' }/
+
+    / Google Tag Manager
+    :javascript
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5Q4X6PL');
+    / End Google Tag Manager
+
+  %body
+    / Google Tag Manager (noscript)
+    %noscript
+      %iframe{ height: '0', src: 'https://www.googletagmanager.com/ns.html?id=GTM-5Q4X6PL', style: 'display: none; visibility: hidden', width: '0' }
+    / End Google Tag Manager (noscript)
+
+    #flash-messages
+      - flash.each do |key, value|
+        .alert{ class: key }
+          = value
+    = render partial: 'shared/loader', locals: { fullscreen: true, hidden: false }
+    = render partial: 'shared/header_style_' + SITE_CONFIG['header_style']
+    = yield
+    = render partial: 'shared/footer_style_' + SITE_CONFIG['footer_style']
+
+    %script{ src: '//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js' }
+    %script{ src: '//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js', type: 'text/javascript' }

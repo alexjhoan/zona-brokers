@@ -1,0 +1,17 @@
+%section.property-specs
+  .item.col-lg-3.col-md-3.col-sm-6.col-xs-6
+    = fa_icon "bed"
+    .content
+      = @property['dormitoriosTXT']
+  .item.col-lg-3.col-md-3.col-sm-6.col-xs-6
+    = fa_icon "bath"
+    .content
+      = @property['baniosTXT']
+  .item.col-lg-3.col-md-3.col-sm-6.col-xs-6
+    = fa_icon "car"
+    .content
+      = @property['garageTXT']
+  .item.col-lg-3.col-md-3.col-sm-6.col-xs-6
+    = fa_icon "arrows-alt"
+    .content
+      = "#{@property['m2TXT']} m²"

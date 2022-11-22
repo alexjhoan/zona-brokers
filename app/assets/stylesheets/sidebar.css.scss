@@ -1,0 +1,151 @@
+.sidebar {
+  padding: 20px;
+  border: $thin-border;
+  border-radius: 3px;
+  box-shadow: 0px 1px 10px -5px;
+  background: white;
+
+  .recommended-properties {
+    float: left;
+  }
+
+  .sidebar-header {
+    width: calc(100% + 40px);
+    border-bottom: $thin-border;
+    float: left;
+    padding: 0 20px;
+    padding-bottom: 10px;
+    margin: 0 -20px;
+
+    h4 {
+      color: $primary-color;
+      margin-bottom: 5px;
+    }
+
+    .powered-by {
+      float: left;
+
+      .text{
+        color: #333333;
+      }
+    }
+  }
+
+  .tags-container {
+    width: 100%;
+    float: left;
+    margin-top: 15px;
+
+    .tag {
+      float: left;
+      border: $thin-border;
+      margin: 4px;
+      padding: 1px 5px;
+      font-size: 12px;
+      color: $tertiary-color;
+
+      a {
+        margin-left: 5px;
+        color: $tertiary-color;
+      }
+
+      &:hover{
+        background-color: $primary-color;
+        color: white;
+      }
+    }
+  }
+
+  .filter-container {
+    float: left;
+    margin-top: 20px;
+    width: 100%;
+
+    h4 {
+      font-size: 16px;
+      color: black;
+      margin-bottom: 10px;
+    }
+
+    .filter {
+      margin-left: 15px;
+      color: #333333;
+      font-size: 14px;
+      line-height: 20px;
+      display: block;
+
+      &.search {
+        margin-top: 10px;
+        color: $primary-color;
+        font-size: 15px;
+        cursor: pointer;
+
+        i {
+          margin-left: 5px;
+        }
+      }
+
+      &:hover{
+        color: $links-sidebar-hover;
+      }
+    }
+
+    .selected {
+      color: $primary-color;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .currency-filter {
+      .primary {
+        cursor: pointer;
+        border: 1px solid $primary-color;
+        font-weight: normal;
+      }
+    }
+
+    .price-filter, .date-filter {
+      margin-top: 10px;
+
+      input {
+        padding: 0 5px;
+        height: 30px;
+        font-size: 12px;
+        display: inline-block;
+        border: $thin-border;
+        width: 100px;
+        float: left;
+        margin-right: 5px;
+      }
+
+      button {
+        height: 30px;
+        line-height: 30px;
+        float: left;
+      }
+    }
+  }
+
+  form {
+    padding: 0px;
+  }
+
+  hr {
+    margin-bottom: 0px;
+  }
+}
+
+
+@media only screen and (max-width: 479px) {
+  .sidebar {
+    margin-top: -10px;
+
+    .filter-container .filter {
+      line-height: 30px;
+    }
+  }
+}
+
+.properties-search-section .sidebar {
+  width: 310px;
+}

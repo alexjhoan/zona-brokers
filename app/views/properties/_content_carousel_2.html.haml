@@ -1,0 +1,21 @@
+/ Product Carousel
+%section.product-carousel-outer
+  - if @listing_type == '0'
+    = render partial: 'content_details'
+
+  %ul.prod-image-carousel.owl-theme.owl-carousel
+    - @property['imagenes'].each do |image|
+      %li
+        %figure.image
+          %a{ href: "#{image['img']}", class: 'lightbox-image option-btn', 'data-fancybox-group': "example-gallery" }
+            %img{ alt: "", src: image['img'] }/
+
+  / Product Thumbs Carousel
+  .prod-thumbs-carousel.owl-theme.owl-carousel
+    - @property['imagenes'].each do |image|
+      .thumb-item
+        %figure.thumb-box
+          %img{ alt: "", src: image['th'] || image['img'] }/
+
+  #property-map{ 'data-latitude': @property['lat'], 'data-longitude': @property['long'], 'data-pointType': @property['pointType'] }
+  #property-panoramic

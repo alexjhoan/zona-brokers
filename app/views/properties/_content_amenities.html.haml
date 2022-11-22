@@ -1,0 +1,8 @@
+%section.amenities
+  .medium-title
+    %h3 Amenities
+  .row
+    - @property['amenities'].each do |amenity|
+      .amenity.col-md-4.col-sm-6.col-xs-12
+        = fa_icon 'check'
+        = amenity['nombre'] || amenity.titleize

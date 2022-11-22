@@ -1,0 +1,15 @@
+.modal.consult-express-modal.hidden
+  .modal-background
+  .modal-box
+    .close-modal
+      %i.icon-cancel
+    %h4
+      INGRESA TUS DATOS PARA ENVIAR LA CONSULTA
+    = form_tag consult_express_property_path(@property['id']), method: 'post', remote: true do
+      %input{ name: 'name', placeholder: 'Nombre*', required: true, type: 'text', value: '' }/
+      %input{ name: 'email', placeholder: 'Email*', required: true, type: 'email', value: '' }/
+      %input{ name: 'phone', placeholder: 'Telefono', required: false }
+      %input{ name: 'listing_type', value: @listing_type, class: 'hidden' }
+      %input{ name: 'rent', value: @property['temporario'], class: 'hidden' }
+      %input{ name: 'query_name', class: 'hidden' }
+      %button.primary.big{ class: "style-#{SITE_CONFIG['buttons_style']}", type: 'submit' } ¡Enviar consulta!

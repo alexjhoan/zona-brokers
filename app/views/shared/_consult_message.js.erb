@@ -1,0 +1,22 @@
+<% if @consult_message[:success].present? %>
+  $('.consult-messages').html("<div class='alert success'><i class='icon-check'></i><%= @consult_message[:success] %></div>");
+<% elsif @consult_message[:error].present? %>
+  $('.consult-messages').html("<div class='alert error'><%= @consult_message[:error] %></div>")
+<% end %>
+
+$('.consult-messages').show();
+$('.consult-messages').delay(4000).fadeOut(400);
+$('.consult-messages .alert').delay(4000).fadeOut(400);
+$('.consult-messages').show();
+$('.consult-messages .alert').show();
+
+setTimeout(function(){
+  $('.consult-messages').hide();
+  $('.consult-messages .alert').hide();
+  $(".consult-form textarea[name='question']").val('');
+
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    enableScroll();
+    $('.consult-modal').addClass('hidden');
+  }
+}, 4000);

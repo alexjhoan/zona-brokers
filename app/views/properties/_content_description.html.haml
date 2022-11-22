@@ -1,0 +1,8 @@
+%section.description
+  .medium-title
+    %h3 Descripción de la propiedad
+  .text-content
+    %p
+      = @property['descripcion'].html_safe
+    %button.consult-button.primary.big{ class: "style-#{SITE_CONFIG['buttons_style']}" }
+      Obtener más información

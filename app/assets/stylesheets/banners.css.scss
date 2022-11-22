@@ -1,0 +1,85 @@
+.banner-container {
+  float: left;
+  width: 100%;
+  margin-bottom: 25px;
+  text-align: center;
+
+  .owl-nav {
+    .owl-prev {
+      color: black;
+    }
+
+    .owl-next {
+      color: black;
+    }
+  }
+}
+
+.banners-carousel {
+  .owl-nav {
+    .owl-prev {
+      color: black;
+    }
+
+    .owl-next {
+      color: black;
+    }
+  }
+}
+
+.banner {
+  margin: 0 auto;
+  overflow: hidden;
+  display: inline-block;
+
+  &.square {
+    width: 300px;
+    height: 250px;
+  }
+
+  &.square-rectangular {
+    width: 300px;
+    height: 250px;
+  }
+
+  &.rectangular-long {
+    width: 960px;
+    height: 90px;
+  }
+
+  &.rectangular-short {
+    width: 728px;
+    height: 90px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .banner.rectangular-long {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .banner.square-rectangular {
+    width: 320px;
+    height: 50px;
+  }
+
+  .banner.rectangular-long {
+    display: block;
+    width: 320px;
+    height: 50px;
+  }
+
+  .banner.rectangular-short {
+    width: 320px;
+    height: 50px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+
+  .banner.square {
+    margin: 10px 10px;
+  }
+}

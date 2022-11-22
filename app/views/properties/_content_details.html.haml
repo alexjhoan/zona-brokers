@@ -1,0 +1,11 @@
+%section.detail-content.row
+  - if @property['ocultarPrecioV'] != 0 && @property['preciov'] != '0'
+    .item.col-sm-6.col-xs-12
+      Venta:  
+      %span.price
+        = number_to_currency(@property['preciov'], delimiter: '.', unit: @property['monedav'] + ' ', precision: 0)
+  - if @property['ocultarPrecioA'] != 0 && @property['precioa'] != '0'
+    .item.col-sm-6.col-xs-12
+      Alquiler:  
+      %span.price
+        = number_to_currency(@property['precioa'], delimiter: '.', unit: @property['monedaa'] + ' ', precision: 0)

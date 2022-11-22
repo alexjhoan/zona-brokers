@@ -1,0 +1,6 @@
+<% if @flash_message[:success].present? %>
+  $('#flash-messages').html("<div class='alert succes'><%= @flash_message[:success] %></div>");
+<% elsif @flash_message[:error].present? %>
+  $('#flash-messages').html("<div class='alert error'><%= @flash_message[:error] %></div>")
+<% end %>
+$('#flash-messages .alert').delay(5000).fadeOut(500)

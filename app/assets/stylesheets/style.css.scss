@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Poppins:300,400,500,600,700');
+
+
+@import 'variables';
+@import 'vendors/owl.theme.default';
+@import 'font-awesome';
+@import 'vendors/flaticon';
+@import 'vendors/owl';
+@import 'vendors/jquery.fancybox';
+@import 'home-banner';
+@import 'form';
+@import 'newsletter';
+@import 'pagination';
+@import 'highlights';
+@import 'property-details';
+@import 'property-carousel';
+@import 'property-listings';
+@import 'property-box';
+@import 'footer';
+@import 'header';
+@import 'sidebar';
+@import 'buttons';
+@import 'select';
+@import 'links-box';
+@import 'loader';
+@import 'modals';
+@import 'vendors/fontello';
+@import 'banners';
+@import 'home-carousel';
+@import 'consult-form';
+@import 'contact';
+@import 'about';
+@import 'similar_properties';
+@import 'blog';
+@import 'blog-comments';
+@import 'fancybox';
+
+/***
+
+====================================================================
+  Fonts
+====================================================================
+
+ ***/
+
+@font-face {
+  font-family: 'fontello';
+  src: font-url('fontello.eot?#iefix') format('embedded-opentype'),
+  font-url('fontello.svg#fontello') format('svg'),
+  font-url('fontello.woff') format('woff'),
+  font-url('fontello.ttf') format('truetype');
+  font-weight: normal;
+}
+
+i {
+  font-family: 'fontello';
+}
+
+/***
+
+====================================================================
+  Reset
+====================================================================
+
+ ***/
+* {
+  margin:0px;
+  padding:0px;
+  border:none;
+  outline:none;
+}
+
+/***
+
+====================================================================
+  Global Settings
+====================================================================
+
+ ***/
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Poppins';
+  font-size:14px;
+  line-height:1.8em;
+  font-weight:400;
+  background:#ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+}
+
+section, header, footer {
+  position: relative;
+  float: left;
+  width: 100%;
+  padding: 10px;
+}
+
+input.form-control.multiselect-search {
+  height: 48px;
+}
+
+.page-content {
+  margin-top: 80px;
+}
+
+.modal {
+  display: block;
+}
+
+.gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background-image: linear-gradient($gradient-color, transparent);
+}
+
+#flash-messages {
+  background-color: $primary-color;
+  position: fixed;
+  top: 0;
+  z-index: 6;
+  width: 100%;
+  margin-top: 80px;
+
+  .alert {
+    background: $primary-color;
+    padding: 5px 10px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 0px;
+    border-radius: 0px;
+
+    &.succes {
+      color: white;
+    }
+
+    &.error {
+      color: $error-color;
+    }
+  }
+}
+
+.turbolinks-progress-bar {
+  background: $primary-color;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+a:hover,a:focus,a:visited{
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+.truncated {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.truncated-3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.powered-by {
+  text-align: right;
+  color: $tertiary-color;
+
+  .text {
+    margin-right: 5px;
+    display: inline-block;
+  }
+
+  img {
+    height: 20px;
+    float: right;
+  }
+}
+
+h2.sec-title {
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 60px;
+  font-size: 30px;
+  color: #242133;
+  font-weight: 600;
+  line-height: 1.5em;
+  letter-spacing: 1px;
+}
+
+.sec-title:after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  left: 0px;
+  bottom: 0px;
+  border-bottom: 3px solid $primary-color;
+}
+
+.sec-title.centered:after {
+  left: 50%;
+  margin-left: -30px;
+}
+
+.prevent-text-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 650px) {
+  h2.sec-title {
+    font-size: 18px;
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  position: relative;
+  font-family: 'Poppins', serif;
+  font-weight: normal;
+  margin: 0px;
+  background: none;
+  line-height: 1.5em;
+}
+
+input,button,select,textarea {
+  font-family: 'Poppins';
+}
+
+p {
+  position: relative;
+  line-height: 1.8em;
+}
+
+.auto-container {
+  position: static;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 300px;
+}
+
+ul,li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.light-font{
+  font-weight:300;
+}
+
+.regular-font{
+  font-weight:400;
+}
+
+.semibold-font{
+  font-weight:600;
+}
+
+.bold-font{
+  font-weight:700;
+}
+
+.ex-bold-font{
+  font-weight:800;
+}
+
+.heavy-font{
+  font-weight:900;
+}
+
+
+.text-uppercase {
+  text-transform:uppercase;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+img.section-divider {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.style-2 {
+  h2.sec-title {
+    background-color: $h2-background-color;
+    color: white;
+    height: 45px;
+    width: 100%;
+    margin-left: -10px;
+    padding: 20px 10px;
+    box-sizing: content-box;
+  }
+
+  .sec-title.centered:after {
+    border-bottom: none;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .page-content {
+    margin-top: 60px;
+  }
+
+  img.section-divider {
+    display: none;
+  }
+
+  .style-2 {
+    h2.sec-title {
+      height: 25px;
+      padding: 10px 10px;
+      margin-bottom: 40px;
+    }
+  }
+
+  #flash-messages {
+    margin-top: 60px;
+  }
+}
+
+.owl-theme .owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  margin-top: -17px;
+  text-align: center;
+
+  .owl-prev {
+    position: absolute;
+    font-size: x-large;
+    left: 0px;
+  }
+
+  .owl-next {
+    position: absolute;
+    font-size: x-large;
+    right: 0px;
+  }
+}

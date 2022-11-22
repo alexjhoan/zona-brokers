@@ -1,0 +1,55 @@
+section.links_box {
+  background: #EDF5F8;
+
+  div[class*=' col-'] {
+    margin-top: 20px
+  }
+
+  .auto-container {
+    max-width: 1000px;
+    padding: 40px 20px;
+  }
+
+  .row {
+    margin-bottom: 50px;
+  }
+
+  .links-carousel {
+    display: none;
+  }
+
+  h3 {
+    margin-bottom: 30px;
+    font-size: 21px;
+    font-weight: 600;
+    color: $primary-color;
+  }
+
+  a {
+    color: $tertiary-color;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    &:hover {
+      color: $links-sidebar-hover;
+    }
+  }
+
+  .banner-container {
+    margin-top: 25px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  section.links_box {
+    .row {
+      display: none;
+    }
+
+    .links-carousel {
+      display: block;
+    }
+  }
+}

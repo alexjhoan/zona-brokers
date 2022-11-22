@@ -1,0 +1,44 @@
+= link_to property_seo_url(property, property['tipoListing']), class: 'property-box col-lg-4 col-md-6 col-sm-6 col-xs-12 style-4', 'data-id': property['id'], target: '_blank' do
+  .box-header
+    .location.truncated
+      %span.fa.fa-map-marker
+      = "#{property['zona']}"
+    = "&nbsp|&nbsp #{property['tipoPropiedad']} &nbsp|&nbsp #{@operation_type_param[:name]}".html_safe
+  %h3.truncated
+    - if property['IDproyecto']
+      = property['titulo'].html_safe + " - Ver #{property['cantUnidades']} unidades"
+    - else
+      = property['titulo'].html_safe
+  .inner-box
+    .image-box
+      %figure.image
+        = image_tag property['img'], alt: ''
+      .images-carousel.owl-theme.owl-carousel.hidden
+      = render partial: "shared/loader", locals: { fullscreen: false, hidden: true, transparent: true }
+    .details
+      - if property['tipoPropiedad'] != 'Terrenos'
+        - if property['IDproyecto']
+          .item
+            .round-icon
+              = fa_icon "bed"
+            = property['allDorms']
+        - else
+          .item.col-lg-4.col-md-4.col-sm-4.col-xs-4
+            .round-icon
+              = fa_icon "bed"
+            = property['dormitorios']
+          .item.col-lg-4.col-md-4.col-sm-4.col-xs-4
+            .round-icon
+              = fa_icon "bath"
+            = property['banios']
+      .item.col-lg-4.col-md-4.col-sm-4.col-xs-4
+        .round-icon
+          = fa_icon "arrows-alt"
+        = property['m2']
+        m²
+    .property-info
+      .property-price
+        = property['precio']
+      %button.primary.big{ class: "style-#{SITE_CONFIG['buttons_style']}" }
+        Ver detalles
+        %i.icon-right-open

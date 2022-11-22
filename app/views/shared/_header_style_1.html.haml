@@ -1,0 +1,13 @@
+%header.main-header
+  = link_to '/', class: 'logo' do
+    = image_tag 'logo.png', title: SITE_CONFIG['site_name'], alt: SITE_CONFIG['site_name']
+
+  .powered-by
+    .text
+      Powered by
+    = image_tag 'infocasas.png', alt: ''
+
+  .right-container
+    %a{ href: 'http://blog.infocasas.com.uy/', class: 'blog hidden-xs', target: '_blank' } BLOG
+    %a{ href: 'http://www.infocasas.com.uy/registro', class: 'publish', target: '_blank' }
+      %button.secondary{ class: "style-#{SITE_CONFIG['buttons_style']}" } PUBLICAR

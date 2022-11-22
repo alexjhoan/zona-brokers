@@ -1,0 +1,48 @@
+$primary-color: #59c7af;
+$primary-color-hover: #53b29d;
+
+$secondary-color: #333333;
+$secondary-color-hover: #5b5b5b;
+
+$tertiary-color: white; //grey
+
+$quaternary-color: #6A6C6D; // light grey
+
+$white-color-hover: #b3b3b3;
+$error-color: #c2171d; //red
+
+$gradient-color: rgba(0, 0, 0, 0.40);
+
+//background colors
+$primary-background-color: #FFFFFF; //black
+$primary-background-faded-dark: rgba(0,0,0,0.30);
+$primary-background-faded-light: rgba(0, 0, 0, 0.60);
+
+// header
+$header-background-color: $primary-background-color;
+$header-border-color: $primary-color;
+$links-header-hover: #59c7af;
+
+// footer
+$footer-background-color: $secondary-color;
+$links-footer-hover: #53b29d;
+
+// home
+$h2-background-color: $secondary-color;
+
+// property list
+$h3-background-color: $secondary-color;
+
+// sidebar
+$links-sidebar-hover: $primary-color;
+
+// pagination
+$pagination-color: $primary-color;
+
+// property details
+$check-color: #59c7af;
+$icon-color: #59c7af;
+
+// borders
+$light-border-color: #f1f1f1;
+$thin-border: 1px solid $light-border-color;

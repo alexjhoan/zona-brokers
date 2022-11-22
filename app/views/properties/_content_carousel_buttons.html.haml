@@ -1,0 +1,12 @@
+/ Product image Carousel
+.buttons-container.button-toggles
+  %button.primary.big.show-location{ class: "style-#{SITE_CONFIG['buttons_style']}" }
+    = fa_icon 'map-marker'
+    Ver ubicación
+  - if SITE_CONFIG['display_street_view']
+    %button.primary.big.show-3d{ class: "style-#{SITE_CONFIG['buttons_style']}" }
+      = fa_icon 'map-marker'
+      Ver calle 3D
+  %button.primary.big.show-images.hidden{ class: "style-#{SITE_CONFIG['buttons_style']}" }
+    = fa_icon 'camera'
+    Ver fotos

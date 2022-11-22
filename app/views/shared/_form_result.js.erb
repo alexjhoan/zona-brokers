@@ -1,0 +1,10 @@
+$("form input").delay(3000).val('');
+$("form textarea").delay(3000).val('');
+
+<% if @result_message[:success].present? %>
+  $('#submit-button').addClass('disabled')
+  $('#submit-button').html('<%= @result_message[:success] %>');
+<% elsif @result_message[:error].present? %>
+  $('#flash-messages').html("<div class='alert error'><%= @result_message[:error] %></div>")
+  $('#flash-messages .alert').delay(5000).fadeOut(500)
+<% end %>

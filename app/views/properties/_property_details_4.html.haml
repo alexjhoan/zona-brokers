@@ -1,0 +1,54 @@
+.page-content
+  %section.property-details{ class: "style-#{SITE_CONFIG['property_details_style']}", 'data-id': @property['id'] }
+    .property-title
+      %h1
+        = title @property['titulo'].upcase
+      = breadcrumbs(@params)
+    .auto-container
+      / Content Side
+      .content-side.col-lg-8.col-md-12.col-sm-12.col-xs-12
+        %section.prop-header
+          .property-info
+            .location
+              = fa_icon 'map-marker'
+              = "#{@property['zona']} | #{@property['tipoPropiedad']}"
+          = render partial: 'content_carousel_buttons'
+
+        = render partial: 'content_carousel_2'
+
+        - if @listing_type == '0' # Propiedad común
+          = render partial: 'content_specs'
+          = render partial: 'content_technical_features'
+
+        - if @property['descripcion'].present?
+          = render partial: 'content_description'
+
+        - if @property['amenities'].present?
+          = render partial: 'content_amenities'
+
+        - if @listing_type == '1' && @property['unidadesHermanas'].present? # Conjunto de propiedades agrupadas
+          = render partial: 'grouped_units_information'
+
+        - if @listing_type == '2' && @property['unidades'].present? # Proyecto
+          = render partial: 'project_information'
+
+        - if @property['youtube'].present?
+          = render partial: 'content_video'
+
+        - if SITE_CONFIG['display_agency_section']
+          = render partial: 'content_agency'
+
+        .side-section
+          .consult-box.sidebar
+            = render partial: 'consult_form', locals: { style: 4 }
+          = render partial: 'share_buttons'
+
+          - if SITE_CONFIG['display_ads_banners']
+            = render partial: 'side_banners'
+
+      - if @similar_properties.present?
+        %section.similar-properties-mobile
+          .medium-title
+            %h3 Propiedades similares
+          - @similar_properties[0..3].each do |property|
+            = render partial: 'properties/property_style_' + SITE_CONFIG['property_box_style'], locals: { property: property }

@@ -1,0 +1,7 @@
+<% @posts.each do |post| %>
+  $('.posts-container').append("<%= escape_javascript(render partial: 'posts/post', locals: { post: post }) %>")
+<% end %>
+$('.loading-gif').addClass('hidden');
+<% if @blog['nextPageToken'].present? %>
+  $('.load-more').removeClass('hidden');
+<% end %>

@@ -1,0 +1,10 @@
+%section.newsletter-section
+  .outer-box
+    .shadow
+    %h2.sec-title.centered
+      Recibí propiedades en tu email
+    .newsletter-style-one
+      = form_tag newsletter_subscribe_path, method: 'post', remote: true do
+        .form-group
+          %input{ name: 'email', placeholder: 'Escribe tu Email', required: '', type: 'email', value: '' }/
+          %button.primary{ class: "style-#{SITE_CONFIG['buttons_style']}", type: 'submit', id: 'submit-button' } Suscribirme

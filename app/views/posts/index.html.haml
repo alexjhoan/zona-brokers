@@ -1,0 +1,18 @@
+- title 'Noticias'
+
+.page-content
+  %section.blog-header
+    .gradient
+    %h1 BLOG
+
+  %section.blog
+    .auto-container
+      .row.clearfix
+        .posts-container
+          - @posts.each do |post|
+            = render partial: 'posts/post', locals: { post: post }
+        - if @blog['nextPageToken'].present?
+          .load-more-container
+            = image_tag "ajax-loader.gif", class: 'loading-gif hidden'
+            %button.primary.big.load-more{ class: "style-#{SITE_CONFIG['buttons_style']}" }
+              = link_to "Cargar más", posts_path(page_token: @blog['nextPageToken']), remote: true

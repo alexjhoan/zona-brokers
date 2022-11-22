@@ -1,0 +1,71 @@
+%footer.main-footer.style-3
+  .auto-container
+    .row
+      .links-column.col-md-4.col-sm-4.col-xs-12
+        .links-box
+          %h2 Links
+          %ul
+            %li
+              = link_to 'Inicio', root_path
+            %li
+              = link_to 'Contacto', contact_us_path
+        .social-box
+          %h2 Social
+          %ul
+            %li
+              = link_to 'https://www.facebook.com/inmobiliariakosak/', target: '_blank' do
+                .icon.fa.fa-facebook-f
+                %span
+                  Facebook
+
+            %li
+              = link_to 'https://twitter.com/KosakUruguay', target: '_blank' do
+                .icon.fa.fa-twitter
+                %span
+                  Twitter
+
+      .office-column.col-md-4.col-sm-4.col-xs-12
+        .office-box
+          %h2
+            Pocitos
+          .info
+            Bvar. España 2989
+            %br/
+            Tel.: 2707 1871*
+            %br/
+            kosak@kosak.com.uy
+        .office-box
+          %h2
+            Carrasco / C. de la Costa
+          .info
+            Rostand 1551
+            %br/
+            Tel.: 2601 6242
+            %br/
+            carrasco@kosak.com.uy
+      .office-column.col-md-4.col-sm-4.col-xs-12
+        .office-box
+          %h2
+            Ciudad Vieja
+          .info
+            Alzaibar 1362
+            %br/
+            Tel.: 2916 9792
+            %br/
+            ciudadvieja@kosak.com.uy
+        .office-box
+          %h2
+            Punta del Este
+          .info
+            Gorlero entre 28 y 29
+            %br/
+            Cel.: +598 97 122 319
+            %br/
+            punta@kosak.com.uy
+
+    %hr
+
+    .powered-by
+      .text
+        Powered by
+      = image_tag 'infocasas.png', alt: ''

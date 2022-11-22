@@ -1,0 +1,10 @@
+%h3
+  BUSCAR MI PROPIEDAD
+.form-group.col-md-6.col-sm-6.col-xs-6#operation_type_column
+  = select_tag "operation_type_name", options_for_select(search_operation_types.map { |obj| [obj[:name], name_to_param(obj[:name])] }), multiple: false, class: 'multiple', id: 'operation_type_name_select'
+.form-group.col-md-6.col-sm-6.col-xs-6#property_type_column
+  = select_tag "property_type_id", options_for_select(property_types.map { |obj| [obj[:name], obj[:id]] }), multiple: true, class: 'multiple', id: 'property_type_id_select', required: ''
+.form-group.col-md-12.col-sm-12.col-xs-12#property_location_column
+  = select_tag "zone_id", options_for_select(zones.map { |obj| [obj[:name].present? ? "#{obj[:state]} - #{obj[:name]}" : "#{obj[:state]} (Departamento)", obj[:id]] }), multiple: true, class: 'multiple', required: ''
+.form-group.col-md-12.col-sm-12.col-xs-12
+  %button.submit.truncated.primary{ class: "style-#{SITE_CONFIG['buttons_style']}", type: "submit" } Buscar

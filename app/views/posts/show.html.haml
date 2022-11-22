@@ -1,0 +1,77 @@
+- set_meta_tags og: { title: @post['title'], url: request.original_url, image: @post['images'].present? ? @post['images'].first['url'] : '' }
+
+%section.blog-header
+  .gradient
+  %h1 BLOG
+
+%section.blog-details
+  .auto-container
+    .row.clearfix
+      .news-style-one
+        .inner-box
+          .lower-content
+            = link_to posts_path, class: 'return-button' do
+              = fa_icon 'arrow-left'
+              VOLVER
+            - if @post['updated'].present?
+              .post-meta
+                = l(@post['updated'].to_date, format: "%d %B, %Y").titleize
+                por
+                = @post['author']['displayName']
+            %h3
+              = title @post['title']
+            .text
+              = @post['content'].html_safe
+        .post-options
+          .clearfix
+            .share-options.clearfix
+              %strong Compartilo en:
+
+              %ul.social-links-one
+                %li
+                  = link_to "https://www.facebook.com/sharer/sharer.php?u=#{@post['url']}", target: '_blank' do
+                    %span.fa.fa-facebook-f
+                %li
+                  = link_to "https://twitter.com/home?status=#{@post['url']}", target: '_blank' do
+                    %span.fa.fa-twitter
+                %li.visible-mobile.hidden
+                  = link_to "whatsapp://send?text=#{@post['url']}", 'data-action': 'share/whatsapp/share' do
+                    %span.fa.fa-whatsapp
+
+      - if @post['replies']['totalItems'].to_i > 0
+        .comments-area
+          .group-title
+            %h2
+              = @post['replies']['totalItems']
+              Comentarios
+          - if @post['replies']['items'].present?
+            .comment-box
+              - @post['replies']['items'].each do |comment|
+                - if comment['inReplyTo'].blank?
+                  .comment
+                    .comment-inner
+                      .author-thumb
+                        = image_tag comment['author']['image']['url'], alt: ''
+                      .comment-content
+                        .text
+                          = comment['content']
+                        .comment-info.clearfix
+                          %strong
+                            = comment['author']['displayName']
+                          .time
+                            = l(comment['updated'].to_date, format: "%d %B, %Y").titleize
+
+                  - @post['replies']['items'].each do |reply|
+                    - if reply['inReplyTo'].present? && reply['inReplyTo']['id'] == comment['id']
+                      .comment.reply-comment
+                        .comment-inner
+                          .author-thumb
+                            = image_tag reply['author']['image']['url'], alt: ''
+                          .comment-content
+                            .text
+                              = reply['content']
+                            .comment-info.clearfix
+                              %strong
+                                = reply['author']['displayName']
+                              .time
+                                = l(reply['updated'].to_date, format: "%d %B, %Y").titleize

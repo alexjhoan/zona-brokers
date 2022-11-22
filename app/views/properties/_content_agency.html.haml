@@ -1,0 +1,40 @@
+%section.agency
+  .medium-title
+    %h3 Anunciante
+  .top-content
+    - if @property['inmobiliaria']['logo'].present?
+      .logo-container
+        %img{ alt: "", src: @property['inmobiliaria']['logo'], class: 'logo' }/
+    .name-phone-container
+      .name
+        = @property['inmobiliaria']['nombre']
+      %button.consult-button.primary.big{ class: "style-#{SITE_CONFIG['buttons_style']}" }
+        Consultar
+      %button.primary.big.enable-phones{ class: "style-#{SITE_CONFIG['buttons_style']}" }
+        Ver teléfono
+      .phone.hidden
+        %a{ href: 'tel:' + @property['inmobiliaria']['telefono'] }
+          = @property['inmobiliaria']['telefono']
+  .locations.row
+    - @property['inmobiliaria']['sucursales'].each do |location|
+      .location.col-sm-6.col-xs-12
+        .name
+          = location['nombre']
+        .address
+          = "Dirección: #{location['direccion']}"
+        - location['telefono'].each do |phone|
+          .phone.hidden
+            %a{ href: 'tel:' + phone }
+              = phone
+  .details.row
+    = fa_icon 'briefcase'
+    %h4 Respaldo y Trayectoria
+    .agency-detail.col-sm-6.col-xs-12
+      .name Propiedades publicadas
+      .value
+        = @property['inmobiliaria']['pactivas']
+      = link_to 'Ver todas', properties_path(operation_type_name: 'venta', real_estate_id: @property['inmobiliaria']['id']), class: 'more'
+    .agency-detail.col-sm-6.col-xs-12
+      .name Publica desde
+      .value
+        = l(@property['inmobiliaria']['fechaReg'].to_date, format: "%B, %Y").capitalize

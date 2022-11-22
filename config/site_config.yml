@@ -1,0 +1,49 @@
+site:
+  site_name: 'Marguery Vega Bienes Raices'
+  site_title: 'Marguery Vega Bienes Raices'
+  home_title: 'Encontrá tu nuevo hogar'
+
+  # Select style:
+
+  # Header: 1 o 2
+  header_style: '2'
+  # Footer: 1, 2 o 3
+  footer_style: '2'
+  # Home banner: 1, 2 o 3
+  home_banner_style: '3'
+  # Miniaturas de propiedades: 1, 2 y 3
+  property_box_style: '1'
+  # Titulos de la home: 1 o 2
+  home_titles_style: '2'
+  # Ficha : 1, 2, 3 o 4
+  property_details_style: '1'
+  # Pagina Empresa: 1 o 2
+  about_page_style: '2'
+  # Botones: 1, 2, 3, 4 o 5
+  buttons_style: '1'
+
+  # Select display (true o false):
+
+  display_contact_page: true
+  display_blog_page: false
+  blog_id: '824175598138027203'
+  display_about_page: true
+  display_projects: false
+  display_terrains: false
+  display_home_carousel: false
+  display_ads_banners: false
+  display_links_box: false
+  display_agency_section: false
+  display_newsletter: false
+  display_link_box_image: false
+  display_continue_search: false
+  display_street_view: false
+
+  # Select set (true o false)
+  set_og_tags: true
+
+  # Group Properties @ listing
+  group_properties: true
+
+  # Secondary Color
+  secondary_color: '#F7A800'

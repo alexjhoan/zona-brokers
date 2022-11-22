@@ -1,0 +1,31 @@
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+  background-image: image-url('fancybox/fancybox_sprite.png');
+}
+
+#fancybox-loading div {
+  width: 44px;
+  height: 44px;
+  background: image-url('fancybox/fancybox_loading.gif') center center no-repeat;
+}
+
+.fancybox-nav {
+  background: transparent image-url('fancybox/blank.gif'); /* helps IE */
+}
+
+.fancybox-overlay {
+  background: image-url('fancybox/fancybox_overlay.png');
+}
+
+/*Retina graphics!*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+     only screen and (min--moz-device-pixel-ratio: 1.5),
+     only screen and (min-device-pixel-ratio: 1.5){
+
+  #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+    background-image: image-url('fancybox/fancybox_sprite@2x.png');
+  }
+
+  #fancybox-loading div {
+    background-image: image-url('fancybox/fancybox_loading@2x.gif');
+  }
+}

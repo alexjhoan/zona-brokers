@@ -1,0 +1,40 @@
+%section.properties
+  %table
+    %tr
+      %th Dormitorios
+      %th Baños
+      %th M2
+      %th Precio
+      %th Ver unidad
+    -@property['unidadesHermanas'].each do |unit|
+      %tr
+        %td
+          = unit['IDdormitorios']
+        %td
+          = unit['IDbanios']
+        %td
+          = unit['m2'] + " m²"
+        %td
+          = 'Venta: ' + unit['moneda'] + ' ' + unit['precio']
+        %td
+          = link_to (fa_icon 'eye'), property_path(id: unit['id'], listing_type: 0)
+  .mobile-table
+    -@property['unidadesHermanas'].each do |unit|
+      .unit-box
+        .unit-info
+          .name Dormitorios
+          .value
+            = unit['precio']
+        .unit-info
+          .name M2
+          .value
+            = unit['m2'] + ' m²'
+        .unit-info
+          .name Precio
+          .value
+            = 'Venta: ' + unit['moneda'] + ' ' + unit['precio']
+        .show-unit
+          Ver unidad
+          = link_to (fa_icon 'eye'), property_path(id: unit['id'], listing_type: 0)
+  %button.consult-button.primary.big{ class: "style-#{SITE_CONFIG['buttons_style']}" }
+    Consultar por este proyecto

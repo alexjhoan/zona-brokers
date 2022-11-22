@@ -1,0 +1,46 @@
+.page-content
+  %section.property-details{ class: "style-#{SITE_CONFIG['property_details_style']}", 'data-id': @property['id'] }
+    .auto-container
+      %section.prop-header
+        .property-info
+          %h1
+            = title @property['titulo']
+          .location
+            = fa_icon 'map-marker'
+            = "#{@property['zona']} | #{@property['tipoPropiedad']}"
+
+        = render partial: 'share_buttons'
+
+      / Content Side
+      .content-side.col-lg-8.col-md-8.col-sm-12.col-xs-12
+        = render partial: 'content_carousel_1'
+
+        - if @listing_type == '0' # Propiedad común
+          = render partial: 'content_details'
+          = render partial: 'content_specs'
+          = render partial: 'content_technical_features'
+
+        - if @property['descripcion'].present?
+          = render partial: 'content_description'
+
+        - if @property['amenities'].present?
+          = render partial: 'content_amenities'
+
+        - if @listing_type == '1' && @property['unidadesHermanas'].present? # Conjunto de propiedades agrupadas
+          = render partial: 'grouped_units_information'
+
+        - if @listing_type == '2' && @property['unidades'].present? # Proyecto
+          = render partial: 'project_information'
+
+        - if @property['youtube'].present?
+          = render partial: 'content_video'
+
+        - if SITE_CONFIG['display_agency_section']
+          = render partial: 'content_agency'
+
+      .side-section.col-lg-4.col-md-4.col-sm-12.col-xs-12
+        .consult-box.sidebar
+          = render partial: 'consult_form', locals: { style: SITE_CONFIG['property_details_style'] }
+        = render partial: 'similar_properties' if @similar_properties.present?
+        - if SITE_CONFIG['display_ads_banners']
+          = render partial: 'side_banners'
