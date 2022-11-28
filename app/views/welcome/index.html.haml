@@ -18,7 +18,8 @@
 - if SITE_CONFIG['display_ads_banners']
   = render partial: 'highlights'
 
-= render partial: 'highlighted-properties', locals: { selected: '1' }
+- if SITE_CONFIG['display_ads_banners']
+  = render partial: 'highlighted-properties', locals: { selected: '1' }
 
 - if SITE_CONFIG['display_ads_banners']
   .banner-container
