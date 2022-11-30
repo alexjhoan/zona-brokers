@@ -103,8 +103,8 @@
       top: 50%;
       -webkit-transform: translateY(-50%);
       margin: 0px 30px;
-      color: #656764;
-      font-weight: 500;
+      color: $primary-color;
+      font-weight: 400;
 
       &:hover {
         color: $links-header-hover;
