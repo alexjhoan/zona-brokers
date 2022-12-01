@@ -9,7 +9,7 @@
 
     h2 {
       position: absolute;
-      background: $primary-color;
+      background: $secondary-color;
       color: white;
       font-size: 20px;
       font-weight: 600;
@@ -57,8 +57,8 @@
       }
 
       button {
-        background-color: white;
-        color: $primary-color;
+        background-color: $secondary-color;
+        color: white;
         font-weight: normal;
         margin: 30px auto;
         display: block;
