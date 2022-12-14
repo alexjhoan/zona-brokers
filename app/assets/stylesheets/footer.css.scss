@@ -123,7 +123,6 @@
 
     .office-column {
       //float: right;
-      padding-top: 40px;
 
       .col-md-4.col-sm-4.col-xs-12 {
         padding: 0px;
@@ -131,6 +130,7 @@
 
       .right{
         text-align: center;
+        padding-top: 40px;
 
         img{
           width: 135px;
@@ -197,9 +197,12 @@
         margin: 40px 0px;
         width: 100%;
         color: $tertiary-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
         p{
-          font-size: 18px;
           margin-bottom: 0;
         }
 
