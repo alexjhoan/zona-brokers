@@ -87,13 +87,9 @@
   }
 
   .description {
-    h2 {
-      padding-top: 52px;
-      padding-bottom: 27px;
-      text-align: center;
-      font-weight: 700;
-      color: $primary-color;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     .foto {
       flex-basis: 50%;
