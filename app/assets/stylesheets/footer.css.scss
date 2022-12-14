@@ -190,22 +190,22 @@
           flex-direction: row;
           align-items: center;
           justify-content: space-between;
+        }
+      }
 
-          .powered-by {
-            margin: 40px 0px;
-            width: 100%;
-            color: $tertiary-color;
+      .powered-by {
+        margin: 40px 0px;
+        width: 100%;
+        color: $tertiary-color;
 
-            p{
-              font-size: 18px;
-              margin-bottom: 0;
-            }
+        p{
+          font-size: 18px;
+          margin-bottom: 0;
+        }
 
-            img {
-              height: 40px;
-              width: 145px;
-            }
-          }
+        img {
+          height: 40px;
+          width: 145px;
         }
       }
     }
