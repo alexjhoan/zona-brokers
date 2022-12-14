@@ -109,6 +109,15 @@
         &:hover {
           color: $links-footer-hover;
         }
+
+        img{
+          margin-right: 20px;
+        }
+      }
+      .info{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
       }
     }
 
@@ -117,6 +126,16 @@
 
       .col-md-4.col-sm-4.col-xs-12 {
         padding: 0px;
+      }
+
+      .info{
+        a{
+          line-height: 3.5;
+
+          img{
+            margin-right: 10px;
+          }
+        }
       }
 
       .office-box {
