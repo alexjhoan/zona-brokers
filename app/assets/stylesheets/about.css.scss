@@ -87,9 +87,22 @@
   }
 
   .description {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    h2 {
+      padding-top: 52px;
+      padding-bottom: 27px;
+      text-align: center;
+      font-weight: 700;
+      color: $primary-color;
+    }
+
+    p{
+      font-size: 20px;
+      color: #4D4D4D;
+
+      span{
+        font-weight: 700;
+      }
+    }
 
     .foto {
       flex-basis: 50%;
