@@ -45,7 +45,7 @@
   h2 {
     position: relative;
     font-size: 25px;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 25px;
   }
 
@@ -75,7 +75,7 @@
 
     h2 {
       font-size: 21px;
-      font-weight: normal;
+      font-weight: bold;
       padding-top: 40px;
       color: $primary-color;
     }
@@ -88,6 +88,9 @@
     }
 
     .social-column {
+      left: 50px;
+      transform: translateX(50px);
+
       a {
         span {
           width: 80px;
