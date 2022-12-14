@@ -132,8 +132,15 @@
         text-align: center;
 
         img{
-          width: 145px;
+          width: 135px;
           height: auto;
+        }
+
+        .rfoter {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
         }
       }
       .info{
@@ -148,6 +155,7 @@
 
       .office-box {
         margin-bottom: 50px;
+        padding-top: 40px;
 
         h3 {
           font-size: 16px;
@@ -176,24 +184,29 @@
             margin-right: 6px;
           }
         }
-      }
-    }
 
-    .powered-by {
-      margin: 115px 0px;
-      width: 210px;
-      color: white;
+        .rfoter {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
 
-      .text {
-        font-size: 18px;
-        text-align: center;
-        padding-top: 6px;
-        margin-right: 15px;
-      }
+          .powered-by {
+            margin: 40px 0px;
+            width: 100%;
+            color: $tertiary-color;
 
-      img {
-        height: 26px;
-        width: 145px;
+            p{
+              font-size: 18px;
+              margin-bottom: 0;
+            }
+
+            img {
+              height: 40px;
+              width: 145px;
+            }
+          }
+        }
       }
     }
   }
