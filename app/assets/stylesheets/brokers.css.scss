@@ -63,13 +63,13 @@
 
     h2{
       font-weight: bold;
-      color: $primary-color;
+      color: #0B4461;
       text-align: center;
     }
 
     h5{
       font-weight: 400;
-      color: $primary-color;
+      color: #0B4461;
 
       span{
         font-weight: bold;
@@ -120,7 +120,7 @@
           margin-bottom: 30px;
 
           &.primary {
-            color: $primary-color;
+            color: #0B4461;
           }
         }
 
@@ -137,7 +137,7 @@
     .description {
 
       h2{
-        color: $primary-color;
+        color: #0B4461;
         padding-top: 51px;
         padding-bottom: 15px;
         font-weight: bold;
@@ -146,7 +146,7 @@
 
       p{
         font-size: 18px;
-        color: $tertiary-color;
+        color: #4D4D4D;
         span{
           font-weight: 700;
         }
@@ -155,7 +155,7 @@
       h5{
         font-size: 20px;
         margin-bottom: 50px;
-        color: $primary-color;
+        color: #0B4461;
         text-align: center;
       }
 
@@ -206,7 +206,7 @@
 
         p.bigTitle{
           font-size: 28px;
-          color: $primary-color;
+          color: #0B4461;
           margin: 0;
           font-weight: 700;
           padding-bottom: 18px;

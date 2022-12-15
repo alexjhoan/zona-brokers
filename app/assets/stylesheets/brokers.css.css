@@ -1,0 +1,281 @@
+.brokers-container {
+  position: relative;
+  width: 100%;
+}
+.brokers-container .auto-container {
+  max-width: 1100px;
+  max-height: 530px;
+}
+.brokers-container .auto-container .info-container {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 615px;
+  height: 530px;
+}
+.brokers-container .auto-container .info-container h1 {
+  padding-left: 8px;
+  padding-bottom: 20px;
+  margin-bottom: 32px;
+  border-bottom: 2px solid #0B4461;
+  color: #333333;
+  font-weight: 600;
+}
+.brokers-container .auto-container .info-container .key-image {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  height: 100px;
+}
+.brokers-container .auto-container .info-container .text {
+  margin-bottom: 20px;
+  color: #333333;
+}
+.brokers-container .auto-container .info-container .author {
+  margin-top: 40px;
+  font-weight: 500;
+  font-size: 16px;
+}
+.brokers-container .auto-container .author-image {
+  position: absolute;
+  bottom: 0px;
+  height: 390px;
+}
+
+.brokers-containerc {
+  text-align: center;
+  padding-top: 63px;
+  padding-bottom: 82px;
+}
+.brokers-containerc img.agente {
+  max-width: 188px;
+  width: 100%;
+  margin-top: 80px;
+  margin-bottom: 14px;
+}
+.brokers-containerc h2 {
+  font-weight: bold;
+  color: #0B4461;
+  text-align: center;
+}
+.brokers-containerc h5 {
+  font-weight: 400;
+  color: #0B4461;
+}
+.brokers-containerc h5 span {
+  font-weight: bold;
+}
+.brokers-containerc p {
+  margin-bottom: 0;
+}
+.brokers-containerc button {
+  margin-top: 7px;
+}
+.brokers-containerc .line {
+  border-bottom: 3px solid #47B5FF;
+  width: 10%;
+  padding-top: 3px;
+  margin-bottom: 10px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.brokers-container.style-1 {
+  padding: 0px;
+  padding-bottom: 52px;
+}
+.brokers-container.style-1 .image-container {
+  height: 350px;
+  width: 100%;
+  background-size: cover;
+  background-position: top center;
+  background-image: image-url("brokersPage/brokers-page.jpg");
+}
+.brokers-container.style-1 .auto-container {
+  max-width: 750px;
+}
+.brokers-container.style-1 .auto-container .info-container {
+  height: inherit;
+}
+.brokers-container.style-1 .auto-container .info-container h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.brokers-container.style-1 .auto-container .info-container h2.primary {
+  color: #0B4461;
+}
+.brokers-container.style-1 .auto-container .info-container .text {
+  margin-bottom: 45px;
+}
+.brokers-container.style-1 .auto-container .info-container .text p {
+  margin-bottom: 30px;
+}
+.brokers-container.style-1 .description h2 {
+  color: #0B4461;
+  padding-top: 51px;
+  padding-bottom: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+.brokers-container.style-1 .description p {
+  font-size: 18px;
+  color: #4D4D4D;
+}
+.brokers-container.style-1 .description p span {
+  font-weight: 700;
+}
+.brokers-container.style-1 .description h5 {
+  font-size: 20px;
+  margin-bottom: 50px;
+  color: #0B4461;
+  text-align: center;
+}
+.brokers-container.style-1 .description .motivo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.brokers-container.style-1 .description .image {
+  max-width: 64px;
+  width: 100%;
+  margin-right: 25px;
+}
+.brokers-container.style-1 .description .texto {
+  flex-basis: 50%;
+  padding: 40px;
+  text-align: center;
+}
+.brokers-container.style-1 .description .texto h3 {
+  color: #1a2f5d;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.brokers-container.style-1 .perfilBroker {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 80px;
+}
+.brokers-container.style-1 .perfilBroker .brokerCol.bg {
+  background: #f1f1f1;
+  padding: 50px 16px;
+}
+.brokers-container.style-1 .perfilBroker .brokerCol {
+  width: 50%;
+}
+.brokers-container.style-1 .perfilBroker .brokerCol img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.brokers-container.style-1 .perfilBroker .brokerCol p.bigTitle {
+  font-size: 28px;
+  color: #0B4461;
+  margin: 0;
+  font-weight: 700;
+  padding-bottom: 18px;
+}
+.brokers-container.style-1 .perfilBroker .brokerCol p {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+.brokers-container.style-1 .perfilBroker .brokerCol .innerColBroker {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1100px) {
+  .brokers-container {
+    padding: 20px 25px 0px;
+  }
+  .brokers-container .auto-container {
+    max-height: none;
+  }
+  .brokers-container .auto-container .info-container {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 100%;
+  }
+  .brokers-container .auto-container .info-container .key-image {
+    position: relative;
+    height: 100px;
+    display: block;
+    margin: 40px auto;
+  }
+  .brokers-container .auto-container .info-container h1 {
+    font-size: 23px;
+    text-align: center;
+    width: 100%;
+    padding: 15px 0px;
+    margin: 0;
+  }
+  .brokers-container .auto-container .info-container .text {
+    text-align: center;
+  }
+  .brokers-container .auto-container .info-container .author {
+    text-align: center;
+  }
+  .brokers-container .auto-container .author-image {
+    position: relative;
+    height: 280px;
+    margin: 0 auto;
+    display: block;
+  }
+  .brokers-container.style-1 {
+    padding: 20px;
+  }
+  .brokers-container.style-1 .image-container {
+    height: 450px;
+    margin: -20px;
+    width: calc(100% + 40px);
+  }
+  .brokers-container.style-1 .description {
+    flex-wrap: wrap;
+  }
+  .brokers-container.style-1 .description .foto {
+    flex-basis: 100%;
+    padding: 50px 20px;
+  }
+  .brokers-container.style-1 .description .texto {
+    flex-basis: 100%;
+    padding: 50px 20px;
+  }
+  .brokers-container.style-1 .auto-container {
+    text-align: center;
+  }
+  .brokers-container.style-1 .auto-container .info-container {
+    margin-top: 40px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .brokers-container.style-1 .description {
+    text-align: left;
+  }
+  .brokers-container.style-1 .description h2 {
+    font-size: 24px;
+  }
+  .brokers-container.style-1 .description p {
+    font-size: 16px;
+  }
+  .brokers-container.style-1 .description p span {
+    font-size: 16px;
+  }
+  .brokers-containerc h2 {
+    font-size: 24px;
+  }
+  .brokers-containerc img.agente {
+    margin-top: 32px;
+    margin-bottom: 14px;
+  }
+}/*# sourceMappingURL=brokers.css.css.map */
