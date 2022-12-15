@@ -1,0 +1,125 @@
+.blog-details .comments-area {
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.blog-details .group-title {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.blog-details .group-title h2 {
+  font-size: 18px;
+  text-transform: capitalize;
+  color: #0b0b0b;
+  font-weight: 500;
+}
+
+.comments-area .comment-box {
+  position: relative;
+}
+
+.comments-area .comment {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.comments-area .comment .comment-content {
+  position: relative;
+  padding: 0px;
+}
+
+.comments-area .reply-comment {
+  margin-left: 40px;
+}
+
+.comments-area .comment .comment-inner {
+  position: relative;
+  padding-left: 110px;
+  min-height: 80px;
+}
+
+.comments-area .comment .author-thumb {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 80px;
+  border-radius: 50%;
+}
+
+.comments-area .comment .author-thumb img {
+  width: 100%;
+  display: block;
+  border-radius: 50%;
+}
+
+.comments-area .comment .comment-info {
+  position: relative;
+  color: #222222;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.comments-area .comment .comment-info strong {
+  position: relative;
+  display: inline-block;
+  color: #0b0b0b;
+  font-size: 15px;
+  font-weight: 500;
+  padding-right: 25px;
+  margin-right: 25px;
+  line-height: 24px;
+  font-family: "Poppins", sans-serif;
+}
+
+.comments-area .comment .comment-info strong:after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  margin-top: -6px;
+  height: 12px;
+  border-right: 2px solid #0b0b0b;
+}
+
+.comments-area .comment .comment-info .time {
+  position: relative;
+  display: inline-block;
+  line-height: 24px;
+}
+
+.comments-area .comment .text {
+  padding-top: 5px;
+  line-height: 1.9em;
+  font-size: 15px;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+.comments-area .comment .reply {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  color: #696969;
+  font-size: 14px;
+  font-weight: 400;
+  display: inline-block;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+@media only screen and (max-width: 479px) {
+  .comments-area .comment .author-thumb {
+    width: 50px;
+  }
+  .comments-area .comment .comment-inner {
+    padding-left: 70px;
+  }
+  .comments-area .comment .comment-info strong {
+    padding-right: 15px;
+    margin-right: 15px;
+  }
+}/*# sourceMappingURL=blog-comments.css.css.map */
