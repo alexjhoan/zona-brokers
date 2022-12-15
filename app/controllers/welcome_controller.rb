@@ -45,4 +45,13 @@ class WelcomeController < ApplicationController
       redirect_to root_url
     end
   end
+
+  def zona
+    if SITE_CONFIG['display_zona_page']
+      render 'welcome/zona_style_' + SITE_CONFIG['zona_page_style']
+    else
+      redirect_to root_url
+    end
+  end
+
 end

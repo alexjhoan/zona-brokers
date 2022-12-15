@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get "/proyectos/:property_name/:id", to: 'properties#show'
   get "/contact_us", to: 'contact#new'
   get "/about", to: 'welcome#about'
+  get "/zona", to: 'welcome#zona'
   get "/:operation_type_name", to: 'properties#index', as: :properties, constraints: PropertyRouteConstraint
   get "/:operation_type_name/:property_type_name", to: 'properties#index', constraints: PropertyRouteConstraint
   get "/:operation_type_name/:property_type_name/:state_name", to: 'properties#index', constraints: PropertyRouteConstraint
