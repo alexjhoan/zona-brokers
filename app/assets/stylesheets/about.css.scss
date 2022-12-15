@@ -49,6 +49,23 @@
   }
 }
 .about-containerb{
+  padding: 55px 0;
+  background-color: $footer-background-color;
+
+  h2{
+    font-weight: bold;
+  }
+
+  h2, h5{
+    color: $primary-color;
+    text-align: center;
+  }
+
+  p{
+    span{
+      font-weight: bold;
+    }
+  }
 
   img.image {
     max-width: 67px;
