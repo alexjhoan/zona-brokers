@@ -19,15 +19,15 @@ site:
   property_details_style: '1'
   # Pagina Empresa: 1 o 2
   about_page_style: '2'
-  # Pagina Zona: 1
-  zona_page_style: '1'
+  # Pagina Brokers: 1
+  brokers_page_style: '1'
   # Botones: 1, 2, 3, 4 o 5
   buttons_style: '1'
 
   # Select display (true o false):
 
   display_contact_page: true
-  display_zona_page: true
+  display_brokers_page: true
   display_blog_page: false
   blog_id: '824175598138027203'
   display_about_page: true
