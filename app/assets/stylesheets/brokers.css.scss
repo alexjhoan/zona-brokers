@@ -137,7 +137,7 @@
     .description {
 
       h2{
-        color: #0B4461;
+        color: $primary-color;
         padding-top: 51px;
         padding-bottom: 15px;
         font-weight: bold;
@@ -311,21 +311,33 @@
   }
 
   @media only screen and (max-width: 992px) {
-    .brokers-container.style-1 .description {
-      text-align: left;
+    .brokers-container.style-1 {
 
-      h2{
-        font-size: 24px;
-      }
+      .description {
+        text-align: left;
 
-      p{
-        font-size: 16px;
+        h2{
+          font-size: 24px;
+        }
 
-        span{
+        p{
           font-size: 16px;
+
+          span{
+            font-size: 16px;
+          }
         }
       }
-    }
+
+      .brokers-section{
+        .perfilBroker{
+          display: flex;
+          flex-direction: column;
+          .brokerCol{
+            width: 100%;
+          }
+        }
+      }
 
     .brokers-containerc {
 
@@ -339,3 +351,16 @@
       }
     }
   }
+}
+
+@media only screen and (max-width: 576px){
+  .perfilBroker{
+
+    .brokerCol{
+
+      p.bigTitle{
+        font-size: 30px!important;
+      }
+    }
+  }
+}
