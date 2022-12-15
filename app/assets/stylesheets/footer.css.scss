@@ -279,10 +279,11 @@
       .powered-by {
         margin: 0px auto;
       }
-    }
 
-    .social-column {
-      left: auto;
+      .social-column {
+        left: auto;
+        transform: none;
+      }
     }
   }
 }
