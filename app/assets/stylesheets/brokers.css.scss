@@ -1,4 +1,4 @@
-.zona-container {
+.brokers-container {
     position: relative;
     width: 100%;
 
@@ -49,7 +49,7 @@
     }
   }
 
-  .zona-containerc{
+  .brokers-containerc{
     text-align: center;
     padding-top: 63px;
     padding-bottom: 82px;
@@ -96,7 +96,7 @@
     }
   }
 
-  .zona-container.style-1 {
+  .brokers-container.style-1 {
     padding: 0px;
     padding-bottom: 52px;
 
@@ -105,7 +105,7 @@
       width: 100%;
       background-size: cover;
       background-position: top center;
-      background-image: image-url('zonaPage/zona-page.jpg');
+      background-image: image-url('brokersPage/brokers-page.jpg');
     }
 
     .auto-container {
@@ -189,7 +189,7 @@
   }
 
   @media only screen and (max-width: 1100px) {
-    .zona-container {
+    .brokers-container {
       padding: 20px 25px 0px;
 
       .auto-container {
@@ -234,7 +234,7 @@
       }
     }
 
-    .zona-container.style-1 {
+    .brokers-container.style-1 {
       padding: 20px;
 
       .image-container {
@@ -268,7 +268,7 @@
   }
 
   @media only screen and (max-width: 992px) {
-    .zona-container.style-1 .description {
+    .brokers-container.style-1 .description {
       text-align: left;
 
       h2{
@@ -284,7 +284,7 @@
       }
     }
 
-    .zona-containerc {
+    .brokers-containerc {
 
       h2{
         font-size: 24px;

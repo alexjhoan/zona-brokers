@@ -47,8 +47,8 @@ class WelcomeController < ApplicationController
   end
 
   def zona
-    if SITE_CONFIG['display_zona_page']
-      render 'welcome/zona_style_' + SITE_CONFIG['zona_page_style']
+    if SITE_CONFIG['display_brokers_page']
+      render 'welcome/brokers_style_' + SITE_CONFIG['brokers_page_style']
     else
       redirect_to root_url
     end
