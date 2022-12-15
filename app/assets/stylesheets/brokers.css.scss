@@ -329,13 +329,12 @@
         }
       }
 
-      .brokers-section{
-        .perfilBroker{
-          display: flex;
-          flex-direction: column;
-          .brokerCol{
-            width: 100%;
-          }
+      .perfilBroker{
+        display: flex;
+        flex-direction: column;
+
+        .brokerCol{
+          width: 100%;
         }
       }
 
@@ -354,12 +353,14 @@
 }
 
 @media only screen and (max-width: 576px){
-  .perfilBroker{
+  .brokers-container.style-1 {
+    .perfilBroker{
 
-    .brokerCol{
+      .brokerCol{
 
-      p.bigTitle{
-        font-size: 30px!important;
+        p.bigTitle{
+          font-size: 30px!important;
+        }
       }
     }
   }
