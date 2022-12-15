@@ -145,7 +145,7 @@
       }
 
       p{
-        font-size: 20px;
+        font-size: 10px;
         color: $tertiary-color;
       }
 
@@ -154,22 +154,16 @@
         font-weight: 700;
       }
 
-      .foto {
-        flex-basis: 50%;
-        background: #59c7af;
-        padding: 50px;
-        text-align: center;
-        color: white;
+      .motivo{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+      }
 
-        img {
-          margin: 0 auto;
-          display: flex;
-        }
-        h4 {
-          color: #1a2f5d;
-          font-weight: 500;
-          margin-top: 15px;
-        }
+      .image{
+        max-width: 64px;
+        width: 100%;
+        margin-right: 25px;
       }
 
       .texto {
