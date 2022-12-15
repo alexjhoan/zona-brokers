@@ -56,6 +56,10 @@
     font-weight: bold;
   }
 
+  h5{
+    font-size: 20px;
+  }
+
   h2, h5{
     color: $primary-color;
     text-align: center;
@@ -71,10 +75,19 @@
     max-width: 67px;
     width: 100%;
     margin-bottom: 15px;
+    margin-top: 36px;
+  }
+
+  .line{
+    border-bottom: 3px solid #47B5FF;
+    width: 15%;
+    padding-top: 15px;
+    margin-bottom: 25px;
   }
 }
 .about-container.style-2 {
   padding: 0px;
+  padding-bottom: 52px;
 
   .image-container {
     height: 350px;
