@@ -135,29 +135,35 @@
     }
 
     .description {
-      text-align: center;
 
       h2{
         color: $primary-color;
         padding-top: 51px;
-        padding-bottom: 27px;
+        padding-bottom: 15px;
         font-weight: bold;
+        text-align: center;
       }
 
       p{
-        font-size: 10px;
+        font-size: 18px;
         color: $tertiary-color;
+        span{
+          font-weight: 700;
+        }
       }
 
       h5{
         font-size: 20px;
-        font-weight: 700;
+        margin-bottom: 50px;
+        color: $primary-color;
+        text-align: center;
       }
 
       .motivo{
         display: flex;
         flex-direction: row;
         align-items: flex-start;
+        margin-bottom: 20px;
       }
 
       .image{
