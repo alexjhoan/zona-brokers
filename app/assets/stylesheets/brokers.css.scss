@@ -224,6 +224,10 @@
           height: 100%;
           flex-direction: column;
           justify-content: center;
+
+          .fa{
+            color: #47B5FF;
+          }
         }
       }
     }
@@ -279,7 +283,6 @@
 
         button {
           background-color: #47B5FF;
-          color: $primary-color;
           font-weight: normal;
           margin: 30px auto;
           display: block;
