@@ -51,3 +51,15 @@
             %li Si tenés vocación por el servicio, acompañando y dando seguimiento a tus clientes.
             %li Si sos una persona proactiva, con buenas habilidades de comunicación y voluntad.
             %li Si disfrutás el mundo del Real Estate, hacer negocios y obtener buenos honorarios.
+    .contact-container
+      %h1 ¿Quieres formar parte de Kosak Brokers?
+      %p.preContact Envianos tu solicitud y nos contactaremos contigo para contarte más
+      = form_tag contact_index_path, method: 'post', id: 'contact-form', remote: true do
+        .contact-form
+          .form-group.col-md-4.col-sm-4.col-xs-12
+            %input{ name: 'name', placeholder: 'Nombre*', required: true, type: 'text', value: '' }
+          .form-group.col-md-4.col-sm-4.col-xs-12
+            %input{ class: 'contact-email', name: 'email', placeholder: 'Email*', required: true, type: 'email', value: '' }
+          .form-group.col-md-4.col-sm-4.col-xs-12
+            %input{ name: 'phone', placeholder: 'Teléfono', required: false }
+          %button.primary.big{ class: "style-#{SITE_CONFIG['buttons_style']}", type: 'submit', id: 'submit-button' } ¡Enviar Solicitud!
