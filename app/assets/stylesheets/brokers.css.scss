@@ -98,7 +98,6 @@
 
   .brokers-container.style-1 {
     padding: 0px;
-    padding-bottom: 52px;
 
     .image-container {
       height: 350px;
@@ -188,7 +187,6 @@
     .perfilBroker{
       display: flex;
       flex-direction: row;
-      margin-bottom: 80px;
 
       .brokerCol.bg{
         background: #f1f1f1;
@@ -232,8 +230,7 @@
 
     .contact-container {
       width: 100%;
-      padding: 10px;
-      margin: 80px 0;
+      padding: 75px 0 65px 0;
       background-image: image-url('brokersPage/suscripcion.jpg');
       background-size: cover;
       background-position: top center;
