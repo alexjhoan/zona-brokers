@@ -31,7 +31,7 @@ site:
   display_blog_page: false
   blog_id: '824175598138027203'
   display_about_page: true
-  display_projects: false
+  display_projects: true
   display_terrains: false
   display_home_carousel: false
   display_ads_banners: false
