@@ -33,7 +33,7 @@ site:
   display_about_page: true
   display_projects: true
   display_terrains: false
-  display_home_carousel: true
+  display_home_carousel: false
   display_ads_banners: false
   display_links_box: false
   display_agency_section: false
