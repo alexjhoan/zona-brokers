@@ -225,7 +225,7 @@
           flex-direction: column;
           justify-content: center;
 
-          li:before {
+          li::before {
             content: "";
             position: absolute;
             width: 9px;
