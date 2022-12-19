@@ -5,16 +5,6 @@
 
 = render partial: 'banner'
 
-- if SITE_CONFIG['display_home_carousel']
-  .carousel-highlights-container
-    .images-carousel.owl-theme.owl-carousel
-      - @home_banners.each do |banner|
-        %a{ href: "#{banner['link']}", target: "#{banner['target']}" }
-          .text-overlay
-            = banner['title']
-          .image
-            = image_tag banner['file']
-
 - if SITE_CONFIG['display_ads_banners']
   = render partial: 'highlights'
 
@@ -32,6 +22,16 @@
 
 - if SITE_CONFIG['display_links_box']
   = render partial: 'shared/links-box', locals: { links: @link_params }
+
+- if SITE_CONFIG['display_home_carousel']
+  .carousel-highlights-container
+    .images-carousel.owl-theme.owl-carousel
+      - @home_banners.each do |banner|
+        %a{ href: "#{banner['link']}", target: "#{banner['target']}" }
+          .text-overlay
+            = banner['title']
+          .image
+            = image_tag banner['file']
 
 - if SITE_CONFIG['display_newsletter']
   = render partial: 'shared/newsletter'
