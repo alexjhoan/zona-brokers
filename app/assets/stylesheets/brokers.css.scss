@@ -225,6 +225,10 @@
           flex-direction: column;
           justify-content: center;
 
+          li{
+            position: relative;
+          }
+
           li::before {
             content: "";
             position: absolute;
