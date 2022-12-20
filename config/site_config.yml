@@ -35,7 +35,7 @@ site:
   display_terrains: false
   display_home_carousel: true
   display_ads_banners: false
-  display_links_box: false
+  display_links_box: true
   display_agency_section: false
   display_newsletter: true
   display_link_box_image: false
