@@ -5,6 +5,8 @@
     / Filter
     .filters.property-listing-tabs
       %ul.filter-tabs.filter-btns.clearfix
+        %li.filter{ "data-value": 0, class: ('active' if  selected == '0')}
+          TODAS
         %li.filter{ "data-value": 1, class: ('active' if  selected == '1')}
           VENTA
         %li.filter{ "data-value": 2, class: ('active' if  selected == '2')}
