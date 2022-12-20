@@ -154,15 +154,6 @@
       }
     }
   }
-  .logo{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-
-    .text{
-      color: white;
-    }
-  }
 }
 
 .home-banner.style-3 {
@@ -176,6 +167,16 @@
   h1 {
     padding-top: 150px;
     padding-bottom: 15px;
+  }
+
+  .logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    .text{
+      color: white;
+    }
   }
 }
 
