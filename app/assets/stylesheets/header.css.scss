@@ -125,23 +125,20 @@
       align-items: center;
       justify-content: center;
       button {
-        background: #39b44a;
-        border-radius: 100%;
-        padding: 7px 10px;
+        padding: 0;
         border: none;
         position: relative;
         z-index: 1;
         margin: 0;
         line-height: 1;
         img {
-          width: 100%;
-          max-width: 65px;
-          font-size: 40px;
+          width: 50px;
+          max-width: 100%;
         }
       }
       span {
         background: #DAD7D0;
-        padding: 10px;
+        padding: 10px 6px 3px 6px;
         font-size: 14px;
         margin-top: -6px;
         color: #1a1a1a;
