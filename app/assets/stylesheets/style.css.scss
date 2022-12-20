@@ -196,7 +196,7 @@ a:hover,a:focus,a:visited{
 
 h2.sec-title {
   position: relative;
-  padding-bottom: 12px;
+  padding-bottom: 15px;
   margin-bottom: 60px;
   font-size: 30px;
   color: #242133;
@@ -211,7 +211,7 @@ h2.sec-title {
   width: 60px;
   left: 0px;
   bottom: 0px;
-  border-bottom: 3px solid $primary-color;
+  border-bottom: 3px solid white;
 }
 
 .sec-title.centered:after {
