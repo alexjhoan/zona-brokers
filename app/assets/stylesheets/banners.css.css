@@ -45,6 +45,7 @@
     display: none;
   }
 }
+
 @media only screen and (max-width: 780px) {
   .banner.square-rectangular {
     width: 320px;
