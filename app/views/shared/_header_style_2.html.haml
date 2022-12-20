@@ -15,7 +15,8 @@
     = link_to 'BLOG', about_path if SITE_CONFIG['display_blog_page']
     = link_to 'CONTACTO', contact_us_path
   #whatsappBtn
-    %a{:href => "https://api.whatsapp.com/send?phone=59892110025", :target => "_blank"}
+    %a{:href => "https://api.whatsapp.com/send?phone=59894440224", :target => "_blank"}
       %button
         %i.fa.fa-whatsapp
-      %span ¡Escribinos!
+        = image_tag 'infocasasb.svg', alt: ''
+      %span Escribinos
