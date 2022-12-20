@@ -154,6 +154,15 @@
       }
     }
   }
+  .logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    .text{
+      color: white;
+    }
+  }
 }
 
 .home-banner.style-3 {
