@@ -132,6 +132,7 @@
     font-weight: 700;
     box-sizing: content-box;
     font-size: 40px;
+    margin-bottom: 20px;
   }
 }
 
@@ -181,8 +182,8 @@
     }
 
     li:hover, li.active {
-      color: $primary-color;
-      border: 1px solid $primary-color;
+      color: white;
+      background-color: #47b5ff;
     }
   }
 }
