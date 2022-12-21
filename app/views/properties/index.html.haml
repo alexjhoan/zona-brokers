@@ -53,7 +53,7 @@
 
     = pagination(@current_page, @pagination['max_page'], @params)
 
-- if SITE_CONFIG['display_links_box'] && @show_links
-  = render :partial => 'shared/links-box', :locals => { links: @link_params }
+-# - if SITE_CONFIG['display_links_box'] && @show_links
+-#   = render :partial => 'shared/links-box', :locals => { links: @link_params }
 
 = render :partial => 'zone_modal'
