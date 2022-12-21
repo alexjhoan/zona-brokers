@@ -17,10 +17,10 @@ button {
   }
 
   &.primary {
-    background: $secondary-color;
+    background: $primary-color;
 
     &:hover {
-      background: $primary-color-hover;
+      background: white;
     }
 
     &.empty {
