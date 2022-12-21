@@ -1,5 +1,4 @@
-
-.icon-search:before { content: '\e800'; } /* '' */
+icon-search:before { content: '\e800'; } /* '' */
 .icon-mail:before { content: '\e801'; } /* '' */
 .icon-plus-circled:before { content: '\e802'; } /* '' */
 .icon-eye:before { content: '\e803'; } /* '' */
