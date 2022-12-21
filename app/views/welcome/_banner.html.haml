@@ -12,16 +12,6 @@
               = render partial: 'welcome/banner-wide'
             .hidden
               = select_tag "state_id", options_for_select(states.map { |obj| ["#{obj[:name]}", obj[:id]] })
-        - if SITE_CONFIG['home_banner_style'] != '5'
-          .row
-            .search-by-reference.col-md-6.col-sm-6.col-xs-8
-              %i.icon-plus-circled
-              Buscar por referencia
-        -#     .powered-by.col-md-6.col-sm-6.col-xs-4
-        -#       .text
-        -#         Powered by
-        -#       = image_tag 'infocasas.png', alt: ''
-        .row
           = form_tag reference_search_properties_path, method: 'get', class: 'reference-search hidden' do
             - if SITE_CONFIG['home_banner_style'] == '5'
               .text
@@ -29,6 +19,23 @@
             %input{ name: 'ref', placeholder: 'Ref. 12345', required: '', type: 'text', value: '', class: 'reference-search-input' }
             %button.primary{ class: "style-#{SITE_CONFIG['buttons_style']}", type: 'submit'}
               = fa_icon "chevron-right"
+        -# - if SITE_CONFIG['home_banner_style'] != '5'
+        -#   .row
+        -#     .search-by-reference.col-md-6.col-sm-6.col-xs-8
+        -#       %i.icon-plus-circled
+        -#       Buscar por referencia
+        -#     .powered-by.col-md-6.col-sm-6.col-xs-4
+        -#       .text
+        -#         Powered by
+        -#       = image_tag 'infocasas.png', alt: ''
+        -# .row
+        -#   = form_tag reference_search_properties_path, method: 'get', class: 'reference-search hidden' do
+        -#     - if SITE_CONFIG['home_banner_style'] == '5'
+        -#       .text
+        -#         Buscar por referencia
+        -#     %input{ name: 'ref', placeholder: 'Ref. 12345', required: '', type: 'text', value: '', class: 'reference-search-input' }
+        -#     %button.primary{ class: "style-#{SITE_CONFIG['buttons_style']}", type: 'submit'}
+        -#       = fa_icon "chevron-right"
     .row.logo
       .powered-by.col-md-8.col-sm-6.col-xs-4
         .text
