@@ -306,7 +306,7 @@
 
   @media only screen and (max-width: 1100px) {
     .brokers-container {
-      padding: 20px 25px 0px;
+      padding: 0;
 
       .auto-container {
         max-height: none;
@@ -361,6 +361,7 @@
 
       .description {
         flex-wrap: wrap;
+        padding: 20px;
 
         .foto {
           flex-basis: 100%;
@@ -441,7 +442,7 @@
     }
 
     .contact-container {
-      padding: 0px!important;
+      padding: 50px 0 20px 0;
       margin: 0px!important;
 
       h1 {
