@@ -16,9 +16,9 @@
       max-width: 700px;
 
       h1 {
-        font-size: 24px;
-        color: #242133;
-        font-weight: 600;
+        font-size: 28px;
+        color: $primary-color;
+        font-weight: 700;
         line-height: 1.5em;
         margin-bottom: 3px;
       }
@@ -73,10 +73,10 @@
     margin-bottom: 30px;
 
     h3 {
-      font-size: 22px;
-      font-weight: 600;
+      font-size: 24px;
+      font-weight: 700;
       text-transform: capitalize;
-      color: #242133;
+      color: $primary-color;
     }
   }
 
