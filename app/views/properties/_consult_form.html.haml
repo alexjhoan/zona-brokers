@@ -23,6 +23,9 @@
     %input{ name: 'listing_type', value: @listing_type, class: 'hidden' }
     %input{ name: 'rent', value: @property['temporario'], class: 'hidden'}
     %button.primary.big{ class: "style-#{SITE_CONFIG['buttons_style']}", type: 'submit' } ¡Enviar Consulta!
+    %a.btnWhatsapp{:href => "https://api.whatsapp.com/send?phone=59892110025", :target => "_blank"}
+      %i.fa.fa-whatsapp
+      Contactar por Whatsapp
   - if @property['inmobiliaria']['telefono'].present?
     .phone
       = fa_icon 'phone'
