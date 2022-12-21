@@ -5,10 +5,10 @@
       .name Enviar propiedad
   = link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.original_url}", class: 'share-button', target: '_blank' do
     %button.primary.empty{ class: "style-#{SITE_CONFIG['buttons_style']}", data: { share_type: 'facebook' }}
-      = image_tag 'face.svg', alt: 'facebook'
+      = fa_icon "facebook"
   = link_to "https://twitter.com/home?status=#{request.original_url}", class: 'share-button', target: '_blank' do
     %button.primary.empty{ class: "style-#{SITE_CONFIG['buttons_style']}", data: { share_type: 'twitter' }}
-      %i.icon-twitter
+      = fa_icon "twitter"
   = link_to "https://api.whatsapp.com/send?text=#{request.original_url}", class: 'share-button whatsapp', target: '_blank' do
     %button.primary.empty{ class: "style-#{SITE_CONFIG['buttons_style']}", data: { share_type: 'whats' }}
       %svg#Capa_1{:height => "18px", :space => "preserve", :style => "enable-background:new 0 0 90 90;", :version => "1.1", :viewbox => "0 0 90 90", :width => "18px", :x => "0px", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", :y => "0px"}
