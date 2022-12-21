@@ -8,7 +8,7 @@
   line-height: 40px;
   padding: 15px 20px;
   background: $header-background-color;
-  border-bottom: 2px solid $secondary-color;
+  border-bottom: 4px solid $secondary-color;
 
   .logo {
     float: left;
@@ -69,10 +69,11 @@
 
   .logo {
     img {
-      height: 70px;
+      height: 60px;
       margin: 0px;
       position: relative;
       z-index: 1;
+      margin-top: 6px;
     }
   }
 
