@@ -425,6 +425,20 @@
               font-size: 16px;
             }
           }
+
+          .motivo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+            text-align: center;
+
+            .image {
+              max-width: 64px;
+              width: 100%;
+              margin-right: 0;
+            }
+         }
         }
     }
   }
