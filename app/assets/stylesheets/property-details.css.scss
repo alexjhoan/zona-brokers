@@ -27,7 +27,7 @@
         float: left;
         font-size: 14px;
         line-height: 24px;
-        color: #222222;
+        color: #4D4D4D;
 
         i {
           margin-right: 5px;
@@ -97,6 +97,10 @@
       font-family: 'Poppins',sans-serif;
       margin-top: 10px;
       display: block;
+    }
+
+    .item.col-sm-6.col-xs-12 {
+      color: #4D4D4D;
     }
 
     li {
