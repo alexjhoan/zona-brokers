@@ -177,6 +177,13 @@
       color: white;
     }
   }
+  button.primary {
+    background: $primary-color;
+
+    &:hover{
+      background: #47B5FF;
+    }
+  }
 }
 
 .home-banner.style-4 {
