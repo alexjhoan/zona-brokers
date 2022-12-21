@@ -89,6 +89,24 @@
     font-weight: normal
   }
 
+  .btnWhatsapp{
+    background-color: #47B5FF;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: normal;
+    color: #fff;
+    i.fa{
+      margin-right: 7px;
+      font-size: 20px;
+      transform: translateY(2px);
+    }
+  }
+
   .phone {
     top: 10px;
     display: inline-block;
