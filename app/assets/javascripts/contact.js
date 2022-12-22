@@ -1,3 +1,6 @@
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+
 $( document ).on('ready', function() {
   if($('section.contact-section').length) {
     map = new google.maps.Map(document.getElementById('contact-map'), {

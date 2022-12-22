@@ -1,3 +1,6 @@
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+
 $( document ).on('ready', function() {
   $('.price-filter a').on('click', function() {
     var new_href = $(this).attr('href');
