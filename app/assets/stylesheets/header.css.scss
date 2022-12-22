@@ -161,20 +161,18 @@
     .right-container {
       margin-right: 0px;
       width: 100%;
-      background: #FFFFFF;
+      background: $header-background-color;
       opacity: 0.95;
-      height: auto;
-      margin-top: 6px;
+      height: 175px;
+      margin-top: -15px;
       padding-top: 40px;
-      padding-bottom: 10px;
-      background-color: #47b5ff;
+      padding-bottom: 22px;
 
       a {
         margin: 0px;
         width: 100%;
         text-align: center;
         top: 5px;
-        color: white;
       }
     }
   }
