@@ -140,6 +140,9 @@
 
         li{
           position: relative;
+          display: flex;
+          flex-direction: row;
+          align-items: baseline;
           p{
             font-size: 16px;
             font-weight: 400;
@@ -147,6 +150,7 @@
           i{
             color: #47B5FF;
             margin-right: 5px;
+            font-size: 18px;
           }
         }
       }
