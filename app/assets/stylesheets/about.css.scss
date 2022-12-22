@@ -304,6 +304,9 @@
 }
 
 @media only screen and (max-width: 992px) {
+  .about-containerb h5 {
+    display: none;
+  }
   .about-container.style-2 {
 
     .description {
