@@ -10,17 +10,22 @@
   background: $header-background-color;
   border-bottom: 4px solid $secondary-color;
 
-  .logo {
-    float: left;
-    margin-left: 16px;
-
-    img {
-      height: 35px;
+  .container-head-main{
+    max-width: 1400px;
+    margin: auto;
+    .logo {
       float: left;
-      margin: 7px 0px;
-      margin-top: 10px;
+      margin-left: 16px;
+
+      img {
+        height: 35px;
+        float: left;
+        margin: 7px 0px;
+        margin-top: 10px;
+      }
     }
   }
+
 
   .powered-by {
     margin-left: 50px;
