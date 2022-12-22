@@ -103,9 +103,11 @@
         border: 1px solid $primary-color;
         font-weight: normal;
         color: #333333;
+        background: white;
 
         &:hover{
           color: white;
+          background-color: #0b4461;
         }
       }
     }
