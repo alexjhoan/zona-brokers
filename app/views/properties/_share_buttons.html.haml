@@ -1,15 +1,15 @@
 .buttons-container
-  = link_to "mailto:mdeamestoy@zonabrokers.com", class: 'share-button' do
+  = link_to "mailto:?subject=Propiedad Recomendada - #{SITE_CONFIG['site_name']}&body=Link de la Propiedad: #{request.original_url}", class: 'share-button' do
     %button.primary.empty{ class: "style-#{SITE_CONFIG['buttons_style']}", data: { share_type: 'email' }}
       %i.icon-mail
       .name Enviar propiedad
-  = link_to "https://www.facebook.com/zonabrokers", class: 'share-button', target: '_blank' do
+  = link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.original_url}", class: 'share-button', target: '_blank' do
     %button.primary.empty{ class: "style-#{SITE_CONFIG['buttons_style']}", data: { share_type: 'facebook' }}
-      = fa_icon "facebook"
+      %i.icon-facebook
   = link_to "https://twitter.com/home?status=#{request.original_url}", class: 'share-button', target: '_blank' do
     %button.primary.empty{ class: "style-#{SITE_CONFIG['buttons_style']}", data: { share_type: 'twitter' }}
-      = fa_icon "twitter"
-  = link_to "https://api.whatsapp.com/send?phone=59894440224", class: 'share-button whatsapp', target: '_blank' do
+      %i.icon-twitter
+  = link_to "https://api.whatsapp.com/send?text=#{request.original_url}", class: 'share-button whatsapp', target: '_blank' do
     %button.primary.empty{ class: "style-#{SITE_CONFIG['buttons_style']}", data: { share_type: 'whats' }}
       = fa_icon "whatsapp"
 
