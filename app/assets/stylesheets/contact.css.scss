@@ -24,12 +24,14 @@
     width: 100%;
     padding: 10px;
     margin-bottom: 75px;
+    background-image: none;
 
     h1 {
       text-align: center;
-      font-size: 30px;
-      font-weight: 600;
-      padding: 40px 0px;
+      font-size: 32px;
+      font-weight: 700;
+      padding: 63px 0px 40px 0px;
+      color: $primary-color;
     }
 
     .contact-form {
@@ -55,6 +57,7 @@
         height: 240px;
         padding: 15px;
         margin-top: 10px;
+        border-radius: 3px;
       }
 
       button {
