@@ -9,8 +9,8 @@
   = link_to "https://twitter.com/home?status=#{request.original_url}", class: 'share-button', target: '_blank' do
     %button.primary.empty{ class: "style-#{SITE_CONFIG['buttons_style']}", data: { share_type: 'twitter' }}
       %i.icon-twitter
-  = link_to "https://api.whatsapp.com/send?text=#{request.original_url}", class: 'share-button whatsapp', target: '_blank' do
-    %button.primary.empty{ class: "style-#{SITE_CONFIG['buttons_style']}", data: { share_type: 'whats' }}
-      = fa_icon "whatsapp"
+  -# = link_to "https://api.whatsapp.com/send?text=#{request.original_url}", class: 'share-button whatsapp', target: '_blank' do
+  -#   %button.primary.empty{ class: "style-#{SITE_CONFIG['buttons_style']}", data: { share_type: 'whats' }}
+  -#     = fa_icon "whatsapp"
 
   #share-url{ data: { url: request.original_url }, class: 'hidden' }
