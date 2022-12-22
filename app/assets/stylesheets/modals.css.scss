@@ -38,13 +38,7 @@
 
   i {
     position: relative;
-    left: -1px;
-    bottom: -2px;
-
-    &::before {
-      content: "\00d7";
-      color: black;
-    }
+    left: -4px;
   }
 }
 
