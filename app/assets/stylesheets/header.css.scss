@@ -189,7 +189,6 @@
 
 @media only screen and (max-width: 479px) {
   .main-header {
-    max-height: 60px;
     padding: 5px 20px;
 
     .logo {
@@ -208,6 +207,7 @@
 
     button {
       margin: 4px;
+      margin-top: 15px;
     }
 
     .right-container {
