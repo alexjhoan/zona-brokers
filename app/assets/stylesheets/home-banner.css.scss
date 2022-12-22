@@ -343,7 +343,6 @@
         text-align: center;
         display: flex;
         flex-direction: row;
-        align-items: center;
         justify-content: center;
 
       .text {
@@ -357,6 +356,10 @@
       width: calc(100% - 20px);
       margin: 15px -15px;
     }
+  }
+
+  .home-banner.style-3 .logo{
+    margin-top: 0;
   }
 
   .home-banner.style-2 {
