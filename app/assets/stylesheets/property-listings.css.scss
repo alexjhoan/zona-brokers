@@ -1,3 +1,7 @@
+.page-content + header.main-header.style-2 #whatsappBtn{
+  display: none
+}
+
 .properties-search-section, .property-listing {
   .side-section {
     float: left;
@@ -222,12 +226,10 @@
 
 @media only screen and (max-width: 768px) {
   .property-listing.style-2{
-
     .properties-search-section .property-listing-tabs li,
     .property-listing .property-listing-tabs li {
       padding: 0px;
     }
-
     h2.sec-title {
       font-size: 24px;
     }
