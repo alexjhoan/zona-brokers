@@ -66,11 +66,11 @@ button.style-1 {
   transition-property: color, background-color;
 
   &.primary:hover {
-    background-color: $secondary-color;
+    background-color: $primary-color;
   }
 
   &.secondary:hover {
-    background-color: $primary-color;
+    background-color: $secondary-color-hover;
   }
 }
 
