@@ -88,6 +88,13 @@
     font-size: 15px;
     font-weight: normal
   }
+  button.big.primary.style-1 {
+    background-color: #0b4461;
+
+    &:hover{
+      background-color: #47b5ff;
+    }
+  }
 
   .btnWhatsapp{
     background-color: #47B5FF;
