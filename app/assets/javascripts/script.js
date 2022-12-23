@@ -49,6 +49,9 @@ $( document ).on('ready', function() {
     $('select').removeClass('custom-select-box');
     $('html, body').css('min-height', window.innerHeight);
     $('.filters-header .datepicker').attr('type', 'date');
+    if(window.location.pathname.includes('/propiedades/') || window.location.pathname.includes('/proyectos/')) {
+      $('.main-header #whatsappBtn').css('display','none');
+    }
   } else {
     $('.datepicker').datepicker({
       format: 'yyyy-mm-dd',
