@@ -458,18 +458,10 @@
 }
 
 @media only screen and (max-width: 576px){
-  .brokers-container {
-    .perfilBroker{
-
-      .brokerCol{
-
-        p.bigTitle{
-          font-size: 30px!important;
-        }
-      }
-    }
+  .brokers-container.style-1{
 
     .description{
+
       .motivo {
         display: flex;
         flex-direction: column;
@@ -478,10 +470,23 @@
         justify-content: center;
         text-align: center;
       }
+
       img{
         margin-right: 0;
         margin-bottom: 12px;
         margin-top: 30px;
+      }
+    }
+  }
+
+  .brokers-container {
+    .perfilBroker{
+
+      .brokerCol{
+
+        p.bigTitle{
+          font-size: 30px!important;
+        }
       }
     }
 
