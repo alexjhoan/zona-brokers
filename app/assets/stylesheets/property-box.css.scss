@@ -365,3 +365,10 @@
     width: 100%;
   }
 }
+
+@media  (max-width: 767px) {
+  .property-box .image-box .property-price {
+    font-size: 20px;
+  }
+
+}
