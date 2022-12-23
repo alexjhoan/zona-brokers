@@ -221,15 +221,16 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .properties-search-section .property-listing-tabs li,
-  .property-listing .property-listing-tabs li {
-    padding: 0px;
-  }
-  .property-listing.style-2 .auto-container .property-listing-tabs li {
-    height: 40px;
-    width: auto;
-    margin: 0px 3px;
-    padding: 7px 10px;
+  .property-listing.style-2{
+
+    .properties-search-section .property-listing-tabs li,
+    .property-listing .property-listing-tabs li {
+      padding: 0px;
+    }
+
+    h2.sec-title {
+      font-size: 24px;
+    }
   }
 }
 
