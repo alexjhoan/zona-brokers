@@ -412,6 +412,9 @@
       }
 
       .brokers-container.style-1 {
+        .image-container {
+          background-image: image-url('brokersPage/brokers-pagem.jpg');
+        }
 
         .description {
           text-align: left;
@@ -441,10 +444,6 @@
               margin-right: 0;
             }
          }
-        }
-
-        .image-container {
-          background-image: image-url('brokersPage/brokers-pagem.jpg');
         }
       }
     .contact-container {
