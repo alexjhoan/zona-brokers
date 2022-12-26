@@ -414,12 +414,6 @@
   }
 
   .brokers-container.style-1 {
-    .image-container {
-      background-image: image-url('brokersPage/brokers-pagem.jpg');
-      background-position: center;
-      height: 450px;
-    }
-
     .description {
       text-align: left;
 
@@ -454,6 +448,11 @@
 
 @media only screen and (max-width: 576px){
   .brokers-container.style-1{
+    .image-container {
+      background-image: image-url('brokersPage/brokers-pagem.jpg');
+      background-position: center;
+      height: 450px;
+    }
     .description{
       .motivo {
         display: flex;
