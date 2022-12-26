@@ -1,53 +1,53 @@
 .brokers-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 0;
+  position: relative;
+  width: 100%;
+  padding-bottom: 0;
 
-    .auto-container {
-      max-width: 1100px;
-      max-height: 530px;
+  .auto-container {
+    max-width: 1100px;
+    max-height: 530px;
 
-      .info-container {
-        position: relative;
-        margin: 0 auto;
-        margin-top: 50px;
-        width: 615px;
-        height: 530px;
+    .info-container {
+      position: relative;
+      margin: 0 auto;
+      margin-top: 50px;
+      width: 615px;
+      height: 530px;
 
-        h1 {
-          padding-left: 8px;
-          padding-bottom: 20px;
-          margin-bottom: 32px;
-          border-bottom: 2px solid #0B4461;
-          color: #333333;
-          font-weight: 600;
-        }
-
-        .key-image {
-          position: absolute;
-          bottom: 0px;
-          right: 0px;
-          height: 100px;
-        }
-
-        .text {
-          margin-bottom: 20px;
-          color: #333333;
-        }
-
-        .author {
-          margin-top: 40px;
-          font-weight: 500;
-          font-size: 16px;
-        }
+      h1 {
+        padding-left: 8px;
+        padding-bottom: 20px;
+        margin-bottom: 32px;
+        border-bottom: 2px solid #0B4461;
+        color: #333333;
+        font-weight: 600;
       }
 
-      .author-image {
+      .key-image {
         position: absolute;
         bottom: 0px;
-        height: 390px;
+        right: 0px;
+        height: 100px;
+      }
+
+      .text {
+        margin-bottom: 20px;
+        color: #333333;
+      }
+
+      .author {
+        margin-top: 40px;
+        font-weight: 500;
+        font-size: 16px;
       }
     }
+
+    .author-image {
+      position: absolute;
+      bottom: 0px;
+      height: 390px;
+    }
+  }
   }
 
   .brokers-containerc{
@@ -218,7 +218,6 @@
 
   .brokers-container.style-1 {
     padding: 0px;
-
     .image-container {
       height: 350px;
       width: 100%;
@@ -254,7 +253,6 @@
     }
 
     .description {
-
       h2{
         color: $primary-color;
         padding-top: 51px;
@@ -351,37 +349,37 @@
           display: block;
         }
       }
-    }
 
-    .brokers-container.style-1 {
-      padding: 20px;
-
-      .image-container {
-        height: 450px;
-        margin: -20px;
-        width: calc(100% + 40px)
-      }
-
-      .description {
-        flex-wrap: wrap;
+      .brokers-container.style-1 {
         padding: 20px;
 
-        .foto {
-          flex-basis: 100%;
-          padding: 50px 20px;
+        .image-container {
+          height: 450px;
+          margin: -20px;
+          width: calc(100% + 40px)
         }
 
-        .texto {
-          flex-basis: 100%;
-          padding: 50px 20px;
+        .description {
+          flex-wrap: wrap;
+          padding: 20px;
+
+          .foto {
+            flex-basis: 100%;
+            padding: 50px 20px;
+          }
+
+          .texto {
+            flex-basis: 100%;
+            padding: 50px 20px;
+          }
         }
-      }
 
-      .auto-container {
-        text-align: center;
+        .auto-container {
+          text-align: center;
 
-        .info-container {
-          margin-top: 40px;
+          .info-container {
+            margin-top: 40px;
+          }
         }
       }
     }
