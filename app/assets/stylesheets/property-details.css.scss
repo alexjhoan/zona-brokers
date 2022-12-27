@@ -91,9 +91,8 @@
 
     .price {
       font-size: 35px;
-      font-weight: 600;
+      font-weight: 700;
       color: $primary-color;
-      font-family: 'Poppins',sans-serif;
       margin-top: 10px;
       display: block;
     }
@@ -556,6 +555,7 @@
     .price {
       display: inline-block;
       margin-left: 10px;
+      font-size: 24px;
     }
   }
 
