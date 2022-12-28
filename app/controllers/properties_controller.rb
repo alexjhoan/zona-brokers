@@ -15,6 +15,8 @@ class PropertiesController < ApplicationController
       @operation_type_param = {id: '0', name: 'Alquier y Venta'}
       params[:property_type_id] = ["3"]
       is_terrain = true
+    elsif params[:operation_type_name] == 'propiedades'
+      @operation_type_param = {id: '0', name: 'Alquier y Venta'}
     else
       @request_params[:dont_group] = true unless SITE_CONFIG['group_properties']
       @operation_type_param = filters_for_param('operation_type_name', params[:operation_type_name])
@@ -40,6 +42,7 @@ class PropertiesController < ApplicationController
     @request_params[:IDdormitorios] = @params[:rooms_id] if @params[:rooms_id].present?
     @request_params[:IDbanios] = @params[:bathrooms_id] if @params[:bathrooms_id].present?
     @request_params[:IDestados] = @params[:status_id] if @params[:status_id].present?
+    @request_params[:IDvendedor] = @params[:broker_id] if @params[:broker_id].present?
     @request_params[:IDdisposicion] = @params[:disposition_id] if @params[:disposition_id].present?
     @request_params[:grupoComodidades] = @params[:comodities_id] if @params[:comodities_id].present?
     @request_params[:IDmoneda] = @params[:currency_id] if @params[:currency_id].present?
@@ -157,7 +160,7 @@ class PropertiesController < ApplicationController
   private
 
   def property_params
-    params.permit(:page, :operation_type_name, :state_id, :status_id, :disposition_id,
+    params.permit(:page, :operation_type_name, :state_id, :status_id, :broker_id, :disposition_id,
       :currency_id, :from_date, :to_date, :min_price, :max_price, :sea_distance_id,
       :list_order, :real_estate_id, property_type_id: [], zone_id: [], bathrooms_id: [],
       rooms_id: [], comodities_id: [])
