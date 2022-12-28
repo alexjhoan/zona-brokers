@@ -599,6 +599,18 @@ module FilterHelper
     ]
   end
 
+  def brokers
+    [
+      { id: '17497', name: 'Maria Noel Deamestoy' },
+      { id: '17363', name: 'Daniel Vilar' },
+      { id: '17364', name: 'Camila Paez' },
+      { id: '17389', name: 'Samir Yassin' },
+      { id: '17396', name: 'Gabriel Montero' },
+      { id: '17444', name: 'Fabián Fagundez' },
+      { id: '17457', name: 'Joaquin Navarro' }
+    ]
+  end
+
   def comodities
     [
       { id: '1', name: 'Calefacción' },
